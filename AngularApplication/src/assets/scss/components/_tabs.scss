@@ -1,0 +1,42 @@
+.nav-tabs {
+  > li {
+    > a {
+      background: transparent;
+      border: 0;
+      border-bottom: 2px solid transparent;
+      outline: none;
+      font-size: 18px;
+      color: rgba(63, 77, 96, 0.6);
+      &:hover,
+      &:focus,
+      &:active {
+        background: transparent;
+        border: 0;
+        border-bottom: 2px solid #0da7fc;
+        color: #333333;
+      }
+    }
+    &.active {
+      > a,
+      > a:hover,
+      > a:focus {
+        background: transparent;
+        border: 0;
+        border-bottom: 2px solid #0da7fc;
+        color: #333333;
+      }
+    }
+  }
+}
+
+.tabs-wrapper {
+  .tabs-title {
+    font-family: "Proxima Nova Bold";
+    border-bottom: 1px solid #ddd;
+    color: #333333;
+    margin: 0;
+    padding: 13px;
+    margin: 0;
+    font-size: 19px;
+  }
+}

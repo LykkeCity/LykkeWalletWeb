@@ -1,0 +1,120 @@
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.heading-lg {
+  font-family: "Proxima Nova Bold";
+  font-size: 40px;
+  line-height: 1.25;
+  color: #333333;
+}
+
+.heading-lgm {
+  font-family: "Proxima Nova Light";
+  font-size: 36px;
+  line-height: 1.11;
+  color: #333333;
+}
+
+.heading-md {
+  font-family: "Proxima Nova Light";
+  font-size: 28px;
+  line-height: 1.43;
+  color: #babfc6;
+}
+
+.heading-sm {
+  font-family: "Proxima Nova Semibold";
+  font-size: 22px;
+  color: #333;
+}
+
+.heading-xs {
+  font-family: "Proxima Nova";
+  font-size: 13px;
+  line-height: 1.85;
+  letter-spacing: 2.4px;
+  color: #3f4d60;
+}
+.text-lg {
+  font-family: "Proxima Nova";
+  font-size: 18px;
+  line-height: 1.67;
+  //text-align: left;
+  color: #3f4d60;
+}
+.text-lgb {
+  @extend .text-lg;
+  font-family: "Proxima Nova Semibold";
+}
+
+.text-md {
+  font-family: "Proxima Nova";
+  font-size: 16px;
+  line-height: 1.5;
+  color: #3f4d60;
+}
+
+.text-s {
+  font-family: "Proxima Nova";
+  font-size: 14px;
+  line-height: 1.43;
+  color: #babfc6;
+}
+
+.sub-custom,
+.small-custom {
+  font-family: "Proxima Nova";
+  letter-spacing: 2.4px;
+  color: #3f4d60;
+  font-size: 12px;
+}
+
+.text-xs {
+  font-family: "Proxima Nova";
+  font-size: 12px;
+  line-height: 1;
+  color: #3f4d60;
+}
+
+.bold {
+  font-family: "Proxima Nova Semibold";
+}
+
+.monospaced {
+  font-feature-settings: "tnum";
+}
+
+.gray-dark {
+  color: #333;
+}
+
+.gray-light-md {
+  color: #b2b8bf;
+}
+
+.gray-light {
+  color: #babfc6;
+}
+
+.blue-dark {
+  color: #3f4d60;
+}
+
+.blue-light {
+  color: #babfc6;
+}
+
+.blue-medium {
+  color: #0da7fc;
+}
+
+.white {
+  color: #fff;
+}
+.orange {
+  color: #ffae2c;
+}
+.purple {
+  color: #d57fff;
+}

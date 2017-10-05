@@ -1,0 +1,32 @@
+<div class="transfer-dropdown-wrapper" (clickOutside)="closeDropdown()">
+  <div class="transfer-select-info-box cursor-pointer form-input pt-5 pb-5" (click)="displayDropdown()">
+    <div class="trasnfer-wallet-name"><span class="text-md bold blue-dark">{{selectedData.walletName}}</span></div>
+    <div class="trasnfer-wallet-balance"><span class="text-s gray-light">{{selectedData.walletBalance}} {{urlAssetName}} available</span></div>
+  </div>
+  <div class="wallet-dropdown-items-container" *ngIf="walletsData.length > 0 && showHideDropdown">
+    <div class="transfer-dropdown-search pl-10 pr-10">
+      <input type="text"
+        class="form-input text-md gray-light"
+        placeholder="Enter address of wallet or select from list..."
+        (keyup)="filterWallets($event)">
+    </div>
+    <div class="transfer-dropdown-items">
+      <div *ngFor="let wallet of walletsData">
+        <h3 class="action-list-title">{{wallet.categoryName}}</h3>
+        <ul class="actions-list">
+          <li class="list-item"
+              *ngFor="let walletInfo of wallet.walletData" (click)="changeInputData(walletInfo)"
+              [ngClass]="{'disabled': walletInfo.walletName == secondSelectedData.walletName, 'selected': walletInfo.walletName == selectedData.walletName}">
+            <!--<div *ngIf="walletInfo.walletName !== secondSelectedData.walletName">-->
+            <div>
+              <div class="row no-gutters wallet-dropdown-link">
+                <div class="col-xs-6"><span>{{walletInfo.walletName}}</span></div>
+                <div class="col-xs-6 text-right"><span>{{walletInfo.walletBalance}} {{urlAssetName}}</span></div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

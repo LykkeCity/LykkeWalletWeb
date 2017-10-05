@@ -1,0 +1,187 @@
+<div class="swift-deposite-placeholder">
+  <div class="small-container mt-83">
+    <div class="row pb-20">
+      <div class="col-xs-2"><img src="../../../../../../assets/img/creadit-card-icons/visa.png" alt=""></div>
+      <div class="col-xs-2"><img src="../../../../../../assets/img/creadit-card-icons/visa-electron.png" alt=""></div>
+      <div class="col-xs-2"><img src="../../../../../../assets/img/creadit-card-icons/mc.png" alt=""></div>
+      <div class="col-xs-2"><img src="../../../../../../assets/img/creadit-card-icons/maestro.png" alt=""></div>
+      <div class="col-xs-2"><img src="../../../../../../assets/img/creadit-card-icons/americanexpress.png" alt=""></div>
+      <div class="col-xs-2"><img src="../../../../../../assets/img/creadit-card-icons/jcb.png" alt=""></div>
+    </div>
+    <div class="row pb-60">
+      <div class="col-xs-2"><img src="../../../../../../assets/img/creadit-card-icons/unionpay.png" alt=""></div>
+      <div class="col-xs-2"><img src="../../../../../../assets/img/creadit-card-icons/skrill.png" alt=""></div>
+      <div class="col-xs-2"><img src="../../../../../../assets/img/creadit-card-icons/przelewy.png" alt=""></div>
+      <div class="col-xs-2"><img src="../../../../../../assets/img/creadit-card-icons/poli.png" alt=""></div>
+      <div class="col-xs-2"><img src="../../../../../../assets/img/creadit-card-icons/ideal.png" alt=""></div>
+      <div class="col-xs-2"><img src="../../../../../../assets/img/creadit-card-icons/giropay.png" alt=""></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="heading-lg gray-dark text-center">Deposit {{assetName}}</h1>
+        <h3 class="heading-md blue-light text-center text-uppercase">Credit card</h3>
+      </div>
+    </div>
+    <div class="row mt-20">
+      <div class="col-xs-12">
+        <p class="text-md blue-dark">To deposit {{assetName}} to your trading wallet please use the following bank account details.</p>
+      </div>
+    </div>
+    <div class="row no-gutters pt-30">
+      <div class="col-xs-3">
+        <span class="text-md blue-light">Templates (2)</span>
+      </div>
+      <div class="col-xs-3">
+        <span class="text-md blue-light">Recent deposits</span>
+      </div>
+      <div class="col-xs-3 col-xs-offset-3 text-right">
+        <span class="text-md blue-light">Add to favorites</span>
+      </div>
+    </div>
+
+    <div class="row no-gutters">
+      <form [formGroup]="creditCardForm" (ngSubmit)="onSubmit()">
+        <div class="col-xs-12 mt-30">
+          <div class="row no-gutters pt-30 border-top-gray-light">
+            <div class="col-xs-4"><label class="bold form-label">Amount</label></div>
+            <div class="col-xs-8">
+              <input
+                type="text"
+                class="form-input text-md blue-dark"
+                name="assetAmount"
+                formControlName="assetAmount">
+              <span class="asset-name text-md blue-light">{{assetName}}</span>
+            </div>
+          </div>
+          <div class="row no-gutters pb-30">
+            <div class="col-xs-8 col-xs-offset-4">
+              <app-error-messages [control]="creditCardForm.controls.assetAmount"></app-error-messages>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="row no-gutters border-top-gray-light pb-20">
+            <div class="col-xs-6">
+              <div class="pr-15">
+                <label class="bold form-label">First name</label>
+                <input
+                  type="text"
+                  class="form-input text-md blue-dark"
+                  name="firstName"
+                  formControlName="firstName">
+                <app-error-messages [control]="creditCardForm.controls.firstName"></app-error-messages>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="pl-15">
+                <label class="bold form-label">Last name</label>
+                <input
+                  type="text"
+                  class="form-input text-md blue-dark"
+                  name="lastName"
+                  formControlName="lastName">
+                <app-error-messages [control]="creditCardForm.controls.lastName"></app-error-messages>
+              </div>
+            </div>
+          </div>
+          <div class="row no-gutters pb-20">
+            <div class="col-xs-12">
+              <div>
+                <label class="bold form-label">Country</label>
+                <select class="form-input" formControlName="country">
+                  <option value="" selected disabled>Choose Country</option>
+                  <option value="1">United States of America</option>
+                  <option value="2">United States of America</option>
+                  <option value="3">United States of America</option>
+                </select>
+              </div>
+              <app-error-messages [control]="creditCardForm.controls.country"></app-error-messages>
+            </div>
+          </div>
+          <div class="row no-gutters pb-20">
+            <div class="col-xs-6">
+              <div class="pr-15">
+                <label class="bold form-label">City</label>
+                <input
+                  type="text"
+                  class="form-input text-md blue-dark"
+                  name="city"
+                  formControlName="city">
+                <app-error-messages [control]="creditCardForm.controls.city"></app-error-messages>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="pl-15">
+                <label class="bold form-label">Zip</label>
+                <input
+                  type="text"
+                  class="form-input text-md blue-dark"
+                  name="zip"
+                  formControlName="zip">
+                <app-error-messages [control]="creditCardForm.controls.zip"></app-error-messages>
+              </div>
+            </div>
+          </div>
+          <div class="row no-gutters pb-20">
+            <div class="col-xs-12">
+              <div>
+                <label class="bold form-label">Address</label>
+                <input
+                  type="text"
+                  class="form-input"
+                  name="address"
+                  formControlName="address">
+                <app-error-messages [control]="creditCardForm.controls.address"></app-error-messages>
+              </div>
+            </div>
+          </div>
+          <div class="row no-gutters">
+            <div class="col-xs-6">
+              <div class="pr-15">
+                <label class="bold form-label">Phone number</label>
+                <input
+                  type="text"
+                  class="form-input text-md blue-dark"
+                  name="phone"
+                  formControlName="phone">
+                <app-error-messages [control]="creditCardForm.controls.phone"></app-error-messages>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="pl-15">
+                <label class="bold form-label">E-mail</label>
+                <input
+                  type="text"
+                  class="form-input text-md blue-dark"
+                  name="email"
+                  formControlName="email">
+                <!--<span class="text-danger" *ngIf="!creditCardForm.controls.email.valid && creditCardForm.controls.email.value.length === 0 && creditCardForm.controls.email.touched">-->
+                <!--Required-->
+                <!--</span>-->
+                <!--<span class="text-danger" *ngIf="creditCardForm.controls.email.touched && !creditCardForm?.controls?.email?.errors?.required && creditCardForm?.controls?.email?.errors?.invalidEmailAddress">-->
+                <!--Invalid Email Address-->
+                <!--</span>-->
+                <app-error-messages [control]="creditCardForm.controls.email"></app-error-messages>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-xs-12 text-center">
+            <div class="pt-60 pb-30">
+              <a href="javascript:;" class="text-md blue-medium pr-10">Terms of Use</a>
+              <a href="javascript:;" class="text-md blue-medium">Lykke Shares Prospectus</a>
+            </div>
+          </div>
+          <div class="col-xs-12 text-center">
+            <div class="pb-30">
+              <button class="btn btn-round text-md white" type="submit">Cash in</button>
+            </div>
+          </div>
+          <div class="col-xs-12 text-center"> <span class="bold blue-medium cursor-pointer" (click)="onLocationBack()">Cancel and go back</span></div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>

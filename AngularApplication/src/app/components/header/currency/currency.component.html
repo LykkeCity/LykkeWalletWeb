@@ -1,0 +1,30 @@
+<div class="row cursor-pointer" *ngIf="baseAssets && userBaseAsset" (click)="onShowCustomSelect($event)">
+  <!--{{userBaseAsset.Name}}-->
+  <!--<select (change)="onUserBaseAssetChange($event)">-->
+    <!--<option *ngFor="let asset of baseAssets; let i = index;"-->
+            <!--[selected]="asset.Name === userBaseAsset.Name"-->
+            <!--value="{{i}}">-->
+      <!--{{asset.Name}}-->
+    <!--</option>-->
+  <!--</select>-->
+  <div class="col-xs-4">
+    <div class="custom-select" >
+      <i class="icon--finance"></i>
+      <span class="custom-select-main-item">{{userBaseAsset.Name}}</span>
+      <div class="custom-select-list" #customSelect [ngClass]="{'active': showSelect }">
+        <span
+          class="custom-select-list-item"
+          *ngFor="let asset of baseAssets; let i = index;"
+          (click)="onChangeBaseAsset(asset.Name, i)"
+          [ngClass]="{'active': asset.Name === userBaseAsset.Name }">
+          {{asset.Name}}
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-8">
+
+    <!--// todo refactor tofixed in controller-->
+    <span class="user-total-amount-header" *ngIf="clientOverallBalance">{{clientOverallBalance | number}} <i  class="icon icon--chevron-thin-down"></i></span>
+  </div>
+</div>

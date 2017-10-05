@@ -1,0 +1,110 @@
+<div class="container asset-detailed-placeholder">
+  <div class="row mt-83">
+    <div class="col-xs-8">
+      <button type="button" class="button-icon button-go-back" (click)="onLocationBack()"></button>
+      <h1 class="asset-title">Asset <small> My HFT Wallet</small></h1>
+      <h2 class="asset-amount">0 currency <sub class="sub-custom text-uppercase">available</sub></h2>
+      <div class="asset-description">
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat fugit ipsam perferendis quidem temporibus. Accusantium eos explicabo id incidunt nemo, perferendis voluptate? Distinctio facilis fugiat omnis repudiandae similique tempora voluptates.</p>
+      </div>
+    </div>
+    <div class="col-xs-offset-2 col-xs-2">
+      <div class="row">
+        <div class="col-xs-12">
+          <app-qr data="https://github.com/neocotic/qrious" size="140"></app-qr>
+        </div>
+        <div class="col-xs-12 text-center">
+          <span class="qr-code-text">Scan to get the<br>address</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row asset-details">
+    <div class="col-xs-12">
+      <a class="asset-details-button" href="javascript:;">Asset definition</a>
+      <a class="asset-details-button" href="javascript:;">Asset webpage</a>
+      <a class="asset-details-button" href="javascript:;">Coinholders</a>
+    </div>
+  </div>
+
+  <div class="row asset-detailed-actions">
+    <!--<app-detailed-asset-navigation [assetId]="asset?.AssetId"></app-detailed-asset-navigation>-->
+
+    <div class="col-xs-3">
+      <h3 class="action-list-title">Deposit</h3>
+      <ul class="actions-list">
+        <li class="list-item">
+          <a *ngIf="asset" [routerLink]="['/wallets/private/deposit/blockchain', asset.AssetId]">
+            <i class="icon icon--deposit_bl_transfer"></i>
+            Blockchain transfer
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-xs-3">
+      <h3 class="action-list-title">Withdraw</h3>
+      <ul class="actions-list">
+        <li class="list-item">
+          <a *ngIf="asset" [routerLink]="['/wallets/private/withdraw/blockchain', asset.AssetId]">
+            <i class="icon icon--withdraw_bl_transfer"></i>
+            Blockchain transfer
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- TOmake this to separate component-->
+<div class="gray-bg mb-10">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-xs-12">
+        <h2 class="currency-section-heading no-collapse">
+          Latest Transactions
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+
+
+  <div class="table-borders">
+    <div class="row">
+      <div class="col-lg-4 col-xs-4"><h3 class="table-heading text-left">Asset and Wallet</h3></div>
+      <div class="col-lg-3 col-xs-3"><h3 class="table-heading text-left">Date</h3></div>
+      <div class="col-lg-2 col-xs-2"><h3 class="table-heading text-left">Operation</h3></div>
+      <div class="col-lg-2 col-xs-2"><h3 class="table-heading text-left">Type</h3></div>
+      <div class="col-lg-1 col-xs-1"><h3 class="table-heading text-right">Amount</h3></div>
+    </div>
+
+    <div class="row cursor-pointer">
+      <div class="col-lg-1  col-xs-1 currency-table-data">
+            <span class="lkk-icon-wrapper">
+              <img src="/assets/img/lkk_icon.png" alt="">
+            </span>
+        <!--TODO ADD ASSET ICON-->
+      </div>
+      <div class="col-lg-3  col-xs-3 currency-table-data">
+        <span class="table-text">
+          Asset<br>
+          <small>My HFT Wallet</small>
+        </span>
+      </div>
+      <div class="col-lg-3  col-xs-3 currency-table-data text-left">
+        <span class="table-text">XX.XX.XXXX</span>
+      </div>
+      <div class="col-lg-2  col-xs-2 currency-table-data text-left">
+        <span class="table-text">Operation</span>
+      </div>
+      <div class="col-lg-2  col-xs-2 currency-table-data text-left">
+        <span class="table-text">Type</span>
+      </div>
+      <div class="col-lg-1  col-xs-1 currency-table-data text-right">
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<div class="swift-deposite-placeholder">
+  <div class="small-container mt-83">
+    <app-form-success></app-form-success>
+    <div class="form-wrapper" *ngIf="_showForm">
+      <div class="row mb-40">
+        <div class="col-xs-12">
+          <h1 class="heading-lg mb-15 gray-dark text-center ">Settle {{assetName}}</h1>
+          <h3 class="heading-lgm mb-10 gray-dark text-center text-uppercase">
+            XXX {{assetName}}<br>
+          </h3>
+          <small class="center-block text-center text-uppercase">available</small>
+          <!--// TODO add amount , sub heading asset name-->
+        </div>
+      </div>
+      <div class="row mt-20">
+        <div class="col-xs-12">
+          <p class="text-md blue-dark">
+            To deposit {{assetName}} to your trading wallet please fill in the form.
+          </p>
+        </div>
+      </div>
+      <!-- UNCOMMENT WHEN API IS DONE-->
+      <!--<div class="row no-gutters pt-30">-->
+      <!--<div class="col-xs-3">-->
+      <!--<span class="text-md blue-light">Recent deposits</span>-->
+      <!--</div>-->
+      <!--<div class="col-xs-3 col-xs-offset-6 text-right">-->
+      <!--<span class="text-md blue-light">Add to favorites</span>-->
+      <!--</div>-->
+      <!--</div>-->
+      <form [formGroup]="settleForm" (ngSubmit)="onSubmit()">
+        <div class="row no-gutters">
+          <div class="col-xs-12 mt-30 border-top-gray-light border-bottom-gray-light">
+            <div class="row no-gutters pt-30 pb-10">
+              <div class="col-xs-4"><label class="bold form-label">Amount</label></div>
+              <div class="col-xs-8">
+                <input type="text" class="form-input text-md blue-dark" formControlName="swiftAmount">
+                <span class="asset-name text-md blue-light">{{assetName}}</span>
+              </div>
+
+              <div class="col-xs-8  col-xs-offset-4">
+                <app-error-messages [control]="settleForm.controls.swiftAmount"></app-error-messages>
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-xs-8 col-xs-offset-4">
+                <p>
+                  <span class="text-md">Settlement Date:</span>
+                  <span class="text-md gray-light">27 Feb 2018 3:00 AM</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-20">
+          <div class="col-xs-12">
+            <div class="row mt-30">
+              <div class="col-xs-8 col-xs-offset-2 text-center">
+                <span class="text-md">Trading wallet balance will be updated after transaction is confirmed in the blockchain</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 text-center">
+            <a href="javascript:;" class="text-md blue-medium pr-10">Memorandum</a>
+          </div>
+          <div class="col-xs-12 text-center pt-30">
+            <button class="btn btn-round text-md white" type="submit" >Send to email</button>
+          </div>
+          <div class="col-xs-12 text-center pt-25"> <span (click)="onLocationBack()" class="bold blue-medium cursor-pointer">Cancel and go back</span></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

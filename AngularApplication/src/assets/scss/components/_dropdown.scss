@@ -1,0 +1,176 @@
+.asset-detailed-actions {
+  border-top: 1px solid #ebedef;
+  .action-list-title {
+    font-family: "Proxima Nova Bold";
+    font-size: 16px;
+    color: #333333;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    margin: 0 0 25px 0;
+  }
+}
+
+.actions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  .list-item {
+    a {
+      position: relative;
+      font-size: 16px;
+      color: #3f4d60;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    .icon {
+      display: inline-block;
+      padding-right: 10px;
+      font-size: 25px;
+      line-height: 24px;
+      vertical-align: bottom;
+    }
+  }
+}
+.wallet-actions {
+  border-top: 1px solid #ebedef;
+  padding: 25px 0;
+  .button-dropdown {
+    font-family: "Proxima Nova Bold";
+    font-size: 16px;
+    letter-spacing: 1.6px;
+    color: #333333;
+    text-transform: uppercase;
+  }
+  app-dropdown:first-child {
+    .btn-group {
+      &:first-child {
+        margin: 0;
+      }
+    }
+  }
+  .btn-group {
+    margin: 0 0 0 40px;
+    .dropdown-menu {
+      color: #0da7fc;
+      margin-top: 15px;
+      border: 0;
+      box-shadow: 0 8px 50px 0 rgba(63, 77, 96, 0.4), 0 5px 5px 0 rgba(63, 77, 96, 0.05);
+      li {
+        margin: 5px;
+        a {
+          padding: 10px;
+          border-radius: 5px;
+        }
+      }
+    }
+    &.open {
+      .dropdown-toggle {
+        box-shadow: none;
+        color: #0da7fc;
+      }
+    }
+  }
+}
+
+.wallet-dropdown-wrapper {
+  position: relative;
+
+  .actions-list .list-item {
+    line-height: 20px;
+    margin-bottom: 0;
+    .icon {
+      vertical-align: middle;
+      margin-right: 0;
+    }
+  }
+
+
+
+}
+
+.wallet-dropdown-items-container {
+  position: absolute;
+  top: 51px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1;
+  width: 240px;
+  padding: 5px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 50px 0 rgba(63, 77, 96, 0.4), 0 5px 5px 0 rgba(63, 77, 96, 0.05);
+  .wallet-dropdown-link {
+    display: block;
+    padding: 0 15px;
+    font-size: 16px;
+    line-height: 40px;
+
+    text-align: left;
+    color: #3f4d60;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
+    .icon {
+      vertical-align: middle;
+    }
+    &:hover {
+      background-color: #f5f6f7;
+    }
+  }
+}
+
+
+
+h3.action-list-title {
+  font-family: "Proxima Nova";
+  font-size: 13px;
+  line-height: 2.31;
+  letter-spacing: 1px;
+  text-align: left;
+  color: #8c94a0;
+  text-transform: uppercase;
+  padding: 8px 15px;
+}
+
+.wallet-dropdown-certain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.table-collapse:last-of-type .wallet-dropdown-items-container {
+  bottom: 51px;
+  top: auto;
+}
+
+.dropdown-hover {
+  &:hover {
+    + .dropdown-container {
+      display: block;
+    }
+  }
+}
+
+.dropdown-container {
+  display: none;
+  transition: all .3s ease;
+  &:hover {
+    display: block;
+  }
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+  }
+  .wallet-dropdown-items-container {
+    top: 130%;
+    width: 100%;
+  }
+}

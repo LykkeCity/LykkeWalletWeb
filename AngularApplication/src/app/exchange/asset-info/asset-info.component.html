@@ -1,0 +1,55 @@
+<div class="exchange-asset-info-placeholder pb-40" *ngIf="assetInfo">
+  <div class="row no-gutters">
+    <div class="col-xs-12 mb-15">
+      <h1 class="text-lg bold gray-dark">{{assetInfo.Id}}</h1>
+    </div>
+    <div class="col-xs-12 mb-10">
+      <div class="row no-gutters">
+        <div class="col-xs-6">
+          <span class="text-md gray-light">Asset class</span>
+        </div>
+        <div class="col-xs-6">
+          <span class="text-md blue-dark">{{assetInfo.AssetClass}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 mb-10">
+      <div class="row no-gutters">
+        <div class="col-xs-6">
+          <span class="text-md gray-light">Popularity index</span>
+        </div>
+        <div class="col-xs-6">
+          <span class="text-md blue-dark">{{assetInfo.PopIndex}}</span>
+          <rating [ngModel]="ratingCount"
+                  [max]="5"
+                  fullIcon="★"
+                  emptyIcon="★"
+                  readonly="true"
+                  class="rating-font-size-9"
+                  [titles]="['one', 'two', 'three', 'four', 'five']">
+          </rating>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 mb-10">
+      <div class="row no-gutters">
+        <div class="col-xs-6">
+          <span class="text-md gray-light">Description</span>
+        </div>
+        <div class="col-xs-6">
+          <span class="text-md blue-dark">{{assetInfo.Description}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 mb-10">
+      <div class="row no-gutters">
+        <div class="col-xs-6">
+          <span class="text-md gray-light">Issuer name</span>
+        </div>
+        <div class="col-xs-6">
+          <span class="text-md blue-dark">{{assetInfo.IssuerName}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

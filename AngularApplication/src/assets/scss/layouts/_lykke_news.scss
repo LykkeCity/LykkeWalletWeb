@@ -1,0 +1,21 @@
+.img-wrapper {
+  padding-bottom: 30px;
+
+  .news-img {
+    width: 100%;
+  }
+}
+
+.news-wrapper {
+  padding: 100px 0;
+
+  &:first-of-type {
+    padding-top: 0;
+  }
+  &:last-of-type {
+    padding-bottom: 0;
+  }
+  &:nth-of-type(2n) {
+    @extend .gray-bg;
+  }
+}

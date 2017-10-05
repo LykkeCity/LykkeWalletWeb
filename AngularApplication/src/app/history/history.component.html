@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row mt-83 mb-75">
+    <div class="col-xs-12">
+      <h1 class="heading-lg gray-dark">History</h1>
+    </div>
+  </div>
+</div>
+
+<div class="gray-bg mb-10">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-4">
+        <h2 class="currency-section-heading no-collapse pull-left">
+          Transactions History <button class="button">CSV  <i class="icon icon--actions"></i></button>
+        </h2>
+      </div>
+      <div class="col-xs-8 filter-buttons text-right">
+        <button class="button text-uppercase" [class.active]="selectedFilter === 'all'" value="all" (click)="onFilterChange($event)">ALL</button>
+        <button class="button text-uppercase" [class.active]="selectedFilter === 'depositWithdraw'" value="depositWithdraw" (click)="onFilterChange($event)">deposit &amp; withdraw</button>
+        <button class="button text-uppercase" [class.active]="selectedFilter === 'trading'" value="trading" (click)="onFilterChange($event)">trading</button>
+        <button class="button text-uppercase" data-toggle="collapse" href="#toggleFilter">
+          <i class="icon icon--actions"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="collapse mt-30" id="toggleFilter">
+  <app-history-filter></app-history-filter>
+</div>
+
+<div class="mt-30">
+  <app-table></app-table>
+</div>

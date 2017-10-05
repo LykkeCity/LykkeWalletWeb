@@ -1,0 +1,75 @@
+.table-borders {
+
+  .table-heading {
+    font-family: "Proxima Nova Semibold";
+    font-size: 18px;
+    line-height: 1.67;
+    letter-spacing: 0.2px;
+    color: #333333;
+  }
+  .row:last-child {
+    .currency-table-data {
+      border-bottom: 1px solid #ebedef;
+      &:first-of-type {
+        border-bottom: 1px solid #ffffff;
+      }
+    }
+  }
+  .row:not(:first-child) {
+    line-height: 43px;
+  }
+  .currency-table-data {
+    border-top: 1px solid #ebedef;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    &:first-of-type {
+      border-top: 1px solid #ffffff;;
+    }
+    .btn-group {
+      line-height: initial;
+    }
+    .icon--actions {
+      font-size: 20px;
+    }
+    .icon--qr {
+      font-size: 25px;
+      margin-right: 5px;
+      &:hover {
+        .qr-main-wrapper {
+          display: inline-block;
+        }
+      }
+    }
+  }
+  .qr-main-wrapper {
+    display: none;
+    position: absolute;
+    padding: 20px;
+    left: 50%;
+    top: 20px;
+    transform: translate(-50%, 0);
+    z-index: 5;
+  }
+  .qr-wrapper {
+    display: inline-block;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 8px 50px 0 rgba(63, 77, 96, 0.4), 0 5px 5px 0 rgba(63, 77, 96, 0.05);
+  }
+
+  .row:last-of-type {
+    margin-bottom: 40px;
+  }
+  .table-text {
+    line-height: 18px;
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 18px;
+    font-family: "Proxima Nova";
+    font-weight: 400;
+  }
+}
+.table-collapse:last-of-type .icon:last-of-type .qr-main-wrapper {
+  bottom: 25px;
+  top: auto;
+}

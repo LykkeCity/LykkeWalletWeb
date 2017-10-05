@@ -1,0 +1,12 @@
+.popup-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 51;
+  .popup-container {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 30px 40px;
+  }
+}

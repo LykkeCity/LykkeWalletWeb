@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/scss/bootstrap_variables";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "./assets/scss/fonts";
+@import "./assets/scss/icons";
+
+// COMPONENTS
+
+@import "./assets/scss/components/header";
+@import "./assets/scss/components/footer";
+@import "./assets/scss/components/curtain";
+@import "./assets/scss/components/aside";
+@import "./assets/scss/components/buttons";
+@import "./assets/scss/components/header_collapse";
+@import "./assets/scss/components/tables";
+@import "./assets/scss/components/tabs";
+@import "./assets/scss/components/popup";
+@import "./assets/scss/components/spinner";
+@import "./assets/scss/components/dropdown";
+@import "./assets/scss/components/custom-select";
+@import "./assets/scss/components/lists";
+@import "./assets/scss/components/forms";
+@import "./assets/scss/components/typings";
+@import "./assets/scss/components/filter";
+
+// LAYOUTS
+@import "assets/scss/layouts/trading-wallet";
+@import "assets/scss/layouts/private-wallet";
+@import "assets/scss/layouts/asset_detailed";
+@import "assets/scss/layouts/exchange";
+@import "assets/scss/layouts/general";
+@import "assets/scss/layouts/button_filters";
+@import "assets/scss/layouts/lykke_news";
+@import "assets/scss/layouts/settings.scss";
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  padding-bottom: 150px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mt-83 {
+  margin-top: 83px;
+}
+.mb-75 {
+  margin-bottom: 75px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.lkk-icon-wrapper {
+  border-radius: 6px;
+  border: 1px solid #eee;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.ss-content {
+  width: calc(100% + 17px);
+  padding: 0 0 0 0;
+  right: 0;
+}
+.ss-scroll {
+  background: #3f4d60;
+  width: 4px;
+  opacity: 0.3;
+}
+.ss-container:hover .ss-scroll {
+  opacity: 0.3;
+}
+
+@for $i from 1 through 12 {
+  .mt-#{$i*5} { margin-top: $i * 5px}
+  .mb-#{$i*5} { margin-bottom: $i * 5px}
+  .pt-#{$i*5} { padding-top: $i * 5px}
+  .pb-#{$i*5} { padding-bottom: $i * 5px}
+  .pr-#{$i*5} { padding-right: $i * 5px}
+  .pl-#{$i*5} { padding-left: $i * 5px}
+}

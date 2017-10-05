@@ -1,0 +1,143 @@
+.form-input {
+  border-radius: 4px;
+  border: solid 1px #cfd2d7;
+  padding: 12px 60px 12px 20px;
+  display: block;
+  width: 100%;
+  outline: 0;
+  position: relative;
+}
+
+.form-textarea-no-borders {
+  border: 0;
+  padding: 0;
+  outline: 0;
+  display: block;
+  width: 100%;
+  resize: none;
+  &::selection {
+    background: transparent;
+  }
+}
+
+.hide-input {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  display: block;
+}
+
+.icon-copy-style {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.copied-to-clipboad-msg {
+  opacity: 0;
+  background: #ebedef;
+  padding: 2px 3px;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+.input-error {
+  color: darkred;
+  border: 1px solid darkred;
+}
+
+.input-msg {
+  color: darkred;
+  display: inline-block;
+  padding-top: 5px;
+}
+
+.asset-name {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+.form-label {
+  padding: 12px 0;
+  font-weight: normal;
+}
+
+.form-input.ng-invalid {
+
+  &.ng-touched, &.ng-dirty {
+
+    border: 1px solid darkred;
+    color: darkred;
+  }
+}
+.form-control.form-input-no-borders {
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+  padding: 0;
+  *:focus {
+    border-color: transparent;
+    outline: 0;
+    box-shadow: 0;
+  }
+}
+
+.custom-checkox {
+  position: relative;
+  input {
+    position: absolute;
+    left: -9999px;
+  }
+  input:checked + label {
+    border: 2px solid #0da7fc;
+  }
+  label {
+    @extend .cursor-pointer;
+    display: block;
+    text-align: center;
+    padding: 10px 20px;
+    border: 2px solid #ebedef;
+    border-radius: 5px;
+    font-weight: normal;
+    font-size: 16px;
+    *:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.form-control-custom {
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ebedef;
+  border-radius: 5px;
+  font-weight: normal;
+  font-size: 16px;
+  width:100%;
+}
+
+.form-control-icon {
+  position: relative;
+  .icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(0,-50%);
+    color: #ccc;
+    font-size: 18px;
+    background: white; // please remove
+  }
+}

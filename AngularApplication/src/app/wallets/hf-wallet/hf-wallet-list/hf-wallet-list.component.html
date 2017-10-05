@@ -1,0 +1,128 @@
+<div class="trading-wallet-placeholder">
+  <div class="container">
+    <div class="row mt-83 mb-75">
+      <div class="col-lg-7 col-xs-7">
+        <div class="row">
+          <div class="col-lg-12 col-xs-12">
+            <h1 class="bold">High Frequency Wallets</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8 col-xs-8">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ducimus ex, iusto quia reiciendis sequi sint voluptates. Culpa dicta distinctio eos expedita in officia officiis perspiciatis, quasi quidem reiciendis velit.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5 col-xs-5">
+        <p class="text-uppercase mt-20">Total Balance</p>
+        <h1>
+          <span *ngIf="clientBalance">XXX</span>
+          <span *ngIf="!clientBalance">0</span>
+          <span *ngIf="userBaseAsset">{{userBaseAsset.Name}}</span>
+        </h1>
+
+        <!--TODO from where to get received and sent money-->
+        <p><span>Received:</span> 50,000.84 LKK</p>
+        <p><span>Sent:</span> 49,000.84 LKK</p>
+        <!--<p><span>P&L:</span> <span class="tform-successcess">+73</span></p>-->
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="gray-bg mb-10">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-xs-12">
+            <h2 class="currency-section-heading no-collapse">
+              Wallets list
+              <button type="button" class="button button-default button-blue pull-right">
+                New wallet
+              </button>
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="container table-borders">
+   <div class="row">
+        <div class="col-lg-1 col-xs-1"></div>
+        <div class="col-lg-2 col-xs-2"><h3 class="table-heading text-left">Wallet name</h3></div>
+        <div class="col-lg-2 col-xs-2"><h3 class="table-heading text-center">Valid until</h3></div>
+        <div class="col-lg-6 col-xs-6"><h3 class="table-heading text-center">API Key</h3></div>
+        <div class="col-lg-1 col-xs-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-lg-1  col-xs-1 currency-table-data">
+              <span class="lkk-icon-wrapper">
+               <img alt="" src="https://lkefiles.blob.core.windows.net/images/api/issuers/lykke.png">
+              </span>
+        </div>
+        <div class="col-lg-2  col-xs-2 currency-table-data"><span class="table-text">My HFT Wallet 1</span></div>
+        <div class="col-lg-2  col-xs-2 currency-table-data text-center"><span class="table-text">XX.XX.XXXX</span></div>
+        <div class="col-lg-6  col-xs-6 currency-table-data text-center"><span class="table-text">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span></div>
+                  <div class="col-lg-1  col-xs-1 currency-table-data text-center"><span class="table-text">
+          <app-dropdown [buttonOptions]="assetButtonOptions"
+                        [dropdownOptions]="assetDropdownOptions"
+                        [dropdownData]="{
+                                            Id: 'wallet-info',
+                                            BlockchainDeposit: true,
+                                            SwiftWithdrawal: true
+                                          }"
+                        [walletName]="'hf-wallet-name'" >
+
+            </app-dropdown></span></div>
+        </div>
+      <div class="row">
+        <div class="col-lg-1  col-xs-1 currency-table-data">
+              <span class="lkk-icon-wrapper">
+               <img alt="" src="https://lkefiles.blob.core.windows.net/images/api/issuers/lykke.png">
+              </span>
+        </div>
+        <div class="col-lg-2  col-xs-2 currency-table-data"><span class="table-text">My HFT Wallet 2</span></div>
+        <div class="col-lg-2  col-xs-2 currency-table-data text-center"><span class="table-text">XX.XX.XXXX</span></div>
+        <div class="col-lg-6  col-xs-6 currency-table-data text-center"><span class="table-text">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span></div>
+        <div class="col-lg-1  col-xs-1 currency-table-data text-center">
+          <span class="table-text">
+          <app-dropdown [buttonOptions]="assetButtonOptions"
+                        [dropdownOptions]="assetDropdownOptions"
+                        [dropdownData]="{
+                                            Id: 'wallet-info',
+                                            BlockchainDeposit: true,
+                                            SwiftWithdrawal: true
+                                          }"
+                        [walletName]="'hf-wallet-name'" >
+
+            </app-dropdown>
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-1  col-xs-1 currency-table-data">
+              <span class="lkk-icon-wrapper">
+               <img alt="" src="https://lkefiles.blob.core.windows.net/images/api/issuers/lykke.png">
+              </span>
+        </div>
+        <div class="col-lg-2  col-xs-2 currency-table-data"><span class="table-text">My HFT Wallet 2</span></div>
+        <div class="col-lg-2  col-xs-2 currency-table-data text-center"><span class="table-text">XX.XX.XXXX</span></div>
+        <div class="col-lg-6  col-xs-6 currency-table-data text-center"><span class="table-text">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span></div>
+        <div class="col-lg-1  col-xs-1 currency-table-data text-center">
+          <span class="table-text">
+          <app-dropdown [buttonOptions]="assetButtonOptions"
+                          [dropdownOptions]="assetDropdownOptions"
+                          [dropdownData]="{
+                                            Id: 'wallet-info',
+                                            BlockchainDeposit: true,
+                                            SwiftWithdrawal: true
+                                          }"
+                          [walletName]="'hf-wallet-name'" >
+
+              <!--// TODO REFACTOR THIS FROM SERVICE-->
+            </app-dropdown>
+        </span>
+        </div>
+      </div>
+      </div>
+

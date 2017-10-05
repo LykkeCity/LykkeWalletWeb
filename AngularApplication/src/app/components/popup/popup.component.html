@@ -1,0 +1,16 @@
+<div class="popup-wrapper" *ngIf="showPopup && popupConfig" [ngStyle]="{'width.px': popupConfig.width}">
+  <div class="popup-container text-center">
+    <img src="/assets/img/attention.svg" alt="attention image"/>
+    <h1 class="mt-30 mb-30 heading-md gray-dark bold">{{popupConfig.title}}</h1>
+    <p class="mb-40 text-lg text-left">{{popupConfig.text}}</p>
+    <div class="row">
+      <button class="button button-blue display-block  mb-10 col-xs-12" (click)="onPopupCancel()">{{popupConfig.btnCancelText}}</button>
+      <button class="button display-block text-center col-xs-12" (click)="onPopupConfirm()">{{popupConfig.btnConfirmText}}</button>
+    </div>
+  </div>
+</div>
+<div class="curtain"
+     *ngIf="showPopup && popupConfig"
+     [ngClass]="{show: showPopup}"
+     (click)="onPopupConfirm()">
+</div>

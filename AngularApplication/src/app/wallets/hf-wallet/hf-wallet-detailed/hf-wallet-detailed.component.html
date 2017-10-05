@@ -1,0 +1,94 @@
+<div class="trading-wallet-placeholder">
+  <div class="container">
+    <div class="row mt-83 mb-75">
+      <div class="col-lg-7 col-xs-7">
+        <div class="row">
+          <div class="col-lg-12 col-xs-12 mb-20">
+            <h1 class="bold">My HFT Wallet X</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8 col-xs-8">
+            <p>
+              Valid until: XX/XX/XX
+            </p>
+            <p>
+              API Token: XXXXXXXXXX <button class="button button-default">Regenerate token</button>
+            </p>
+            <p>
+              API Documentation <button class="button button-default" href="https://hft-service-dev.lykkex.net/swagger/ui/index.html#/">HFT Swagger</button>
+            </p>
+            <p>
+              Download SDK
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5 col-xs-5">
+        <p class="text-uppercase mt-20">Total Balance</p>
+        <h1>
+          <span *ngIf="clientBalance">XXX</span>
+          <span *ngIf="!clientBalance">0</span>
+          <span *ngIf="userBaseAsset">{{userBaseAsset.Name}}</span>
+        </h1>
+
+        <!--TODO from where to get received and sent money-->
+        <p><span>Received:</span> 50,000.84 LKK</p>
+        <p><span>Sent:</span> 49,000.84 LKK</p>
+        <!--<p><span>P&L:</span> <span class="tform-successcess">+73</span></p>-->
+      </div>
+    </div>
+  </div>
+  <div >
+    <div class="gray-bg mb-10">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-xs-12">
+            <h2 class="currency-section-heading no-collapse">
+              My HF Wallet Name
+              <button class="button button-default pull-right" >
+                <i class="icon icon--details"></i>
+                View details
+              </button>
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="container table-borders">
+        <div class="row" >
+          <div class="col-lg-1 col-xs-1"><h3 class="table-heading text-left">Asset</h3></div>
+          <div class="col-lg-4 col-xs-4"></div>
+          <div class="col-lg-2 col-xs-2"><h3 class="table-heading text-center">Issuer</h3></div>
+          <div class="col-lg-2 col-xs-2"><h3 class="table-heading text-center">Base currency</h3></div>
+          <div class="col-lg-2 col-xs-2"><h3 class="table-heading text-center">Amount</h3></div>
+          <div class="col-lg-1 col-xs-1"></div>
+        </div>
+        <div class="row" >
+          <div class="col-lg-1  col-xs-1 currency-table-data">
+              <span class="lkk-icon-wrapper">
+               <img src="https://lkefiles.blob.core.windows.net/images/api/issuers/lykke.png" alt="">  <!-- // TODO PROVITE ASSET ICONS-->
+              </span>
+          </div>
+          <div class="col-lg-4  col-xs-4 currency-table-data"><span class="table-text">Asset</span></div>
+          <div class="col-lg-2  col-xs-2 currency-table-data text-center"><span class="table-text">Issuer</span></div><!-- //TODO Issuer name-->
+          <div class="col-lg-2  col-xs-2 currency-table-data text-center"><span class="table-text">0</span></div><!-- // TODO BASE CURRENCY NAME-->
+          <div class="col-lg-2  col-xs-2 currency-table-data text-center"><span class="table-text">0</span></div>
+          <div class="col-lg-1  col-xs-1 currency-table-data text-center" >
+            <app-dropdown [buttonOptions]="assetButtonOptions"
+                          [dropdownOptions]="assetDropdownOptions"
+                          [dropdownData]="{
+          Id: 'Asset',
+          BlockchainDeposit: true,
+          SwiftWithdrawal: true
+        }"
+            [walletName]="'wallet-name'">
+            </app-dropdown>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

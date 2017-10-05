@@ -1,0 +1,21 @@
+<div class="currency-pair-placeholder" *ngIf="currencyPairList">
+  <div class="container pt-20 pb-20 border-bottom-gray-light">
+    <div class="row no-gutters">
+      <div class="col-xs-3 text-left">
+        <button type="button" class="button button-blue two-icons" (click)="openModal()">
+          <i class="icon icon--reverse" (click)="reverseCurrencyPair($event, currencyPair)"></i>
+          <span>{{currencyPair}}</span>
+          <i  class="icon icon--chevron-thin-down"></i>
+        </button>
+        <div class="custom-select-list ss-container auto-height" [ngClass]="{'active': showSelect }">
+          <span class="custom-select-list-item"
+                *ngFor="let cPair of currencyPairList"
+                [ngClass]="{'active': cPair.Name == currencyPair}"
+                (click)="onAssetChange(cPair)">
+            {{cPair.Name}}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

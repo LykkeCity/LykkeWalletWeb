@@ -1,0 +1,81 @@
+<div class="row">
+  <div class="col-xs-10">
+    <div class="row pt-30 pb-20">
+      <div class="col-xs-4"><label class="bold form-label">Order</label></div>
+      <div class="col-xs-4">
+        <button type="button" class="exchange-btn blue-dark"
+          [ngClass]="{'active': type == 'buy'}"
+          #buyBtn
+          (click)="showExchangeForm(buyBtn, sellBtn, 'buy')">
+          <i class="icon icon--trading_buy"></i>
+          Buy
+        </button>
+      </div>
+      <div class="col-xs-4">
+        <button type="button" class="exchange-btn blue-dark"
+          [ngClass]="{'active': type == 'sell'}"
+          #sellBtn
+          (click)="showExchangeForm(sellBtn, buyBtn, 'sell')">
+          <i class="icon icon--trading_sell"></i>
+          Sell
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-10">
+    <form [formGroup]="buySellForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-xs-4"><label class="bold form-label">Buy</label></div>
+        <div class="col-xs-8">
+          <input
+            type="text"
+            class="form-input text-md blue-dark"
+            (keyup)="calculateAssetsAmount()"
+            name="assetAmount"
+            formControlName="assetAmount">
+          <span class="asset-name text-md blue-light">{{firstAsset}}</span>
+        </div>
+      </div>
+      <div class="row pb-20">
+        <div class="col-xs-8 col-xs-offset-4">
+          <app-error-messages [control]="buySellForm.controls.assetAmount"></app-error-messages>
+        </div>
+      </div>
+      <div class="row pb-20">
+        <div class="col-xs-4"><label class="bold form-label">Price</label></div>
+        <div class="col-xs-8">
+          <input type="text"
+            class="form-input text-md blue-dark"
+            readonly
+            name="assetRate"
+            formControlName="assetRate">
+          <span class="asset-name text-md blue-light">{{firstAsset}}</span>
+        </div>
+      </div>
+      <div class="row pb-20">
+        <div class="col-xs-4"><label class="bold form-label">Sell</label></div>
+        <div class="col-xs-8">
+          <input type="text"
+            class="form-input text-md blue-dark"
+            readonly
+            name="assetPairCalculation"
+            formControlName="assetPairCalculation">
+          <span class="asset-name text-md blue-light">{{secondAsset}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-4 text-center">
+          <div class="pt-60 pb-30">
+            <p class="text-md blue-light">I want to buy 20 BTC for 24,033.2 USD</p>
+          </div>
+        </div>
+        <div class="col-xs-8 col-xs-offset-4 text-center">
+          <div class="pb-30">
+            <button class="btn btn-round full-width bold white orange-bg" type="submit">Cash in</button>
+          </div>
+        </div>
+        <div class="col-xs-8 col-xs-offset-4 text-center"> <span class="bold orange">Cancel and go back</span></div>
+      </div>
+    </form>
+  </div>
+</div>

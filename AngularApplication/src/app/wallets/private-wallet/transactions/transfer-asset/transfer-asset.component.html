@@ -1,0 +1,85 @@
+<div class="swift-deposite-placeholder">
+  <div class="small-container mt-83">
+    <div class="row no-gutters pb-30">
+      <div class="col-xs-12">
+        <h1 class="heading-lg gray-dark text-center">Transfer {{assetName}}</h1>
+        <h3 class="heading-md blue-light text-center text-uppercase">1.04 {{assetName}}</h3>
+        <p class="heading-xs text-center gray-light">available</p>
+      </div>
+    </div>
+    <div class="row no-gutters">
+      <div class="col-xs-12">
+        <p class="text-md blue-dark">To transfer {{assetName}} to your wallet please fill in the form.</p>
+      </div>
+    </div>
+    <!--<div class="row no-gutters pt-30">-->
+      <!--<div class="col-xs-3">-->
+        <!--<span class="text-md blue-light">Recent deposits</span>-->
+      <!--</div>-->
+      <!--<div class="col-xs-3 col-xs-offset-6 text-right">-->
+        <!--<span class="text-md blue-light">Add to favorites</span>-->
+      <!--</div>-->
+    <!--</div>-->
+    <div class="row no-gutters pt-30">
+      <div class="col-xs-12 mt-30 border-top-gray-light border-bottom-gray-light">
+        <form [formGroup]="transferForm">
+          <div class="row no-gutters pt-30">
+            <div class="col-xs-4"><label class="bold form-label">Amount</label></div>
+            <div class="col-xs-8">
+              <input
+                type="text"
+                class="form-input text-md blue-dark"
+                formControlName="transferAmount"
+                (keyup)="calculateAmountToBaseAsset($event)">
+              <span class="asset-name text-md blue-light">{{assetName}}</span>
+            </div>
+          </div>
+          <div class="row no-gutters pb-30">
+            <div class="col-xs-8 col-xs-offset-4">
+              <app-error-messages [control]="transferForm.controls.transferAmount"></app-error-messages>
+            </div>
+            <div class="col-xs-8 col-xs-offset-4 mt-10" *ngIf="calculatedRate > 0">
+              <span class="text-md gray-light">= {{calculatedRate}} {{baseAsset.Id}}</span>
+            </div>
+          </div>
+        </form>
+        <div class="row no-gutters pb-30">
+          <div class="col-xs-4"><label class="bold form-label">Send from wallet</label></div>
+          <div class="col-xs-8">
+            <app-transfer-asset-dropdown
+              *ngIf="walletsData"
+              [data]="walletsData"
+              [selectedData]="selectedTo"
+              [secondSelectedData]="selectedFrom"
+              [baseAsset]="baseAsset"
+              [urlAssetName]="assetName"
+              type="from"
+              (changeWallet)="onDataChange($event)">
+            </app-transfer-asset-dropdown>
+          </div>
+        </div>
+        <div class="row no-gutters pb-30">
+          <div class="col-xs-4"><label class="bold form-label">Send to wallet</label></div>
+          <div class="col-xs-8">
+            <app-transfer-asset-dropdown
+              *ngIf="walletsData"
+              [data]="walletsData"
+              [selectedData]="selectedFrom"
+              [secondSelectedData]="selectedTo"
+              [baseAsset]="baseAsset"
+              [urlAssetName]="assetName"
+              type="to"
+              (changeWallet)="onDataChange($event)">
+            </app-transfer-asset-dropdown>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row no-gutters pt-60">
+      <div class="col-xs-12 text-center">
+        <button class="btn btn-round text-md white" type="button">Submit</button>
+      </div>
+      <div class="col-xs-12 text-center mt-25"> <span class="bold blue-medium">Cancel and go back</span></div>
+    </div>
+  </div>
+</div>

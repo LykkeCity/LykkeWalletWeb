@@ -1,0 +1,60 @@
+<div class="row pb-10 border-bottom-gray-light no-gutters">
+  <div class="col-xs-4">
+    <h1 class="text-lgb text-left">Price</h1>
+  </div>
+  <div class="col-xs-4">
+    <h1 class="text-lgb text-right">Volume</h1>
+  </div>
+  <div class="col-xs-4">
+    <h1 class="text-lgb text-right">Depth</h1>
+  </div>
+</div>
+<div class="mt-15 mb-30 cursor-pointer" (click)="onAssetDetails()">
+  <div *ngIf="!orderBookData.BuyOrders && !orderBookData.SellOrders">There is no data!</div>
+  <div *ngFor="let order of orderBookData.BuyOrders; let i = index">
+    <div class="row no-gutters" *ngIf="i < 10">
+      <div class="col-xs-4">
+        <div>
+          <span class="text-md orange text-left display-block monospaced">{{order.Price.toFixed(3)}}</span>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div>
+          <span class="text-md gray-light-md text-right display-block monospaced">{{order.Volume.toFixed(3)}}</span>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div>
+          <span class="text-md gray-light-md text-right display-block monospaced">Depth</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<div class="row mt-10 mb-10">-->
+  <!--<div class="col-xs-12"><h1 class="text-lgb blue-dark">1219.16 USD</h1></div>-->
+<!--</div>-->
+<div class="cursor-pointer" (click)="onAssetDetails()">
+  <div *ngFor="let order of orderBookData.SellOrders; let i = index">
+    <div class="row no-gutters" *ngIf="i < 10">
+      <div class="col-xs-4">
+        <div>
+          <!--<span *ngIf="i < 10">{{order.Price | number: '1.3-3'}}</span>-->
+          <span class="text-md purple text-left display-block monospaced">{{order.Price.toFixed(3)}}</span>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div>
+          <span class="text-md gray-light-md text-right display-block monospaced">{{order.Volume.toFixed(3)}}</span>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div>
+          <span class="text-md gray-light-md text-right display-block monospaced">Depth</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

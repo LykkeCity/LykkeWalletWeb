@@ -1,0 +1,25 @@
+<div class="user-profile-wrapper" *ngIf="userData">
+  <div class="dropdown-hover">
+    <span class="header-img-profile-wrapper">
+      <img src="assets/img/assets/lykke-small.png" alt="">
+    </span>
+    <span class="text-lg gray-dark">{{userData.FullName}}</span>
+  </div>
+  <div class="dropdown-container">
+    <div class="wallet-dropdown-items-container">
+      <ul class="actions-list">
+        <li class="list-item">
+          <a class="wallet-dropdown-link" routerLink="/settings">
+            Settings
+          </a>
+        </li>
+        <li class="list-item">
+          <a class="wallet-dropdown-link" href="javascript:;">
+            Logout
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+

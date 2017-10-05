@@ -1,0 +1,187 @@
+.aside-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 51;
+  width: 0;
+  max-width: 550px;
+  transition-duration: .5s;
+  overflow-x: hidden;
+  &.from-right {
+    right: 0;
+    transform: translate(550px,0);
+  }
+  &.from-left {
+    transform: translate(-550px,0);
+    left: 0;
+  }
+  &.show {
+    width: 40%;
+    transform: translate(0,0);
+  }
+  .component-wrapper,
+  .header-wrapper,
+  .footer-wrapper,
+  .breadcrumb-wrapper {
+    width: 550px;
+    @media screen and (max-width: 1400px) {
+      width: 500px;
+    }
+  }
+  .header-wrapper {
+    padding-bottom: 25px;
+    border-bottom: 1px solid #ebedef;
+    margin-bottom: 25px;
+  }
+  .footer-wrapper {
+    position: absolute;
+    bottom: 50px;
+    left: 30px;
+    right: 30px;
+    background: #ffffff;
+    .social-nav {
+      a {
+        font-size: 16px;
+        line-height: 42px;
+        color: rgba(63,77,96,0.8);
+        i {
+          padding-right: 25px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .breadcrumb-wrapper {
+    .breadcrumb {
+      margin: 0;
+      padding: 18px 40px;
+      li {
+        color: #3f4d60;
+        font-size: 16px;
+        a {
+          color: inherit;
+        }
+        &:last-child {
+          &:after {
+            content: "";
+          }
+        }
+        &:before {
+          content: "";
+          padding: 0;
+        }
+        &:after {
+          content: "\e933";
+          font-family: lwicons;
+          font-size: 14px;
+          display: inline-block;
+          padding: 0 15px;
+        }
+      }
+    }
+  }
+  .component-wrapper {
+    padding: 60px 40px;
+    box-sizing: border-box;
+    h2 {
+      font-size: 40px;
+      color: #333333;
+      font-family: "Proxima Nova Bold";
+      margin: 0;
+    }
+    h3 {
+      font-family: "Proxima Nova Thin";
+      font-size: 28px;
+      letter-spacing: -0.3px;
+      margin-bottom: 30px;
+      sub {
+        opacity: 0.6;
+        font-size: 14px;
+        letter-spacing: 2.4px;
+        color: #3f4d60;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .lykke-projects-wrapper {
+    position: initial;
+    padding: 25px 30px 40px;
+    .projects-list-wrapper {
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        li {
+          margin-bottom: 30px;
+        }
+        a:hover {
+          text-decoration: none;
+          .project-content,
+          .project-description {
+            color: rgba(63,77,96,0.8);
+          }
+        }
+        .project-logo {
+          float: left;
+          margin-right: 10px;
+          img {
+            width: 50px;
+            height: 50px;
+          }
+        }
+        .project-content {
+          overflow: hidden;
+          .project-name {
+            margin-top: 5px;
+            font-size: 24px;
+            letter-spacing: -0.4px;
+            color: #333333;
+            display: block;
+            strong {
+              font-family: "Proxima Nova Semibold";
+            }
+          }
+          .project-description {
+            display: block;
+            font-size: 16px;
+            line-height: 25px;
+            text-align: left;
+            color: rgba(63,77,96,0.6);
+          }
+        }
+      }
+    }
+  }
+}
+
+.blockchain-status {
+  img {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+  }
+  .status-text {
+    font-size: 18px;
+    color: #0da7fc;
+    display: inline-block;
+    font-family: "Proxima Nova Bold";
+  }
+  .progress-text {
+    opacity: 0.6;
+    font-size: 16px;
+    color: #3f4d60;
+    display: none;
+  }
+  &.in-progress {
+    img {
+      vertical-align: top;
+    }
+    .progress-text {
+      display: block;
+    }
+  }
+}

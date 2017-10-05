@@ -1,0 +1,94 @@
+<header class="main-header">
+    <div class="header-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6">
+            <button type="button" class="button menu-button" (click)="onAsideToggle()">
+              <i class="icon icon--menu"></i>
+            </button>
+            <a routerLink="/wallets/trading">
+              <img src="assets/img/lykke_wallet_logo.svg" alt="Lykke Wellet" class="header-logo">
+              <h1 class="header-page-title"><strong>Lykke</strong>Wallet</h1>
+            </a>
+          </div>
+          <div class="col-xs-6 clearfix" *ngIf="authService.isAuthenticated()">
+            <!--<button (click)="onLogout()">logout</button>-->
+            <!--<app-search></app-search>-->
+            <!--<app-notifications></app-notifications>-->
+            <!--profile-->
+            <div class="pull-right">
+              <app-user-profile></app-user-profile>
+            </div>
+            <div class="pull-right mt-10">
+              <i class="icon--notificaton icon-font-size-20"></i>
+            </div>
+            <div class="pull-right mt-10">
+              <i class="icon--search icon-font-size-20"></i>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="main-header-nav">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-9">
+            <ul class="main-navigation">
+              <li>
+                <a routerLinkActive="active" routerLink="wallets">Wallets</a>
+              </li>
+              <li>
+                <a routerLinkActive="active" routerLink="exchange/BTC">Exchange</a>
+              </li>
+              <li>
+                <a routerLinkActive="active" routerLink="history">History</a>
+              </li>
+              <li>
+                <a routerLinkActive="active" routerLink="my-lykke">My lykke</a>
+              </li>
+              <!--<li>-->
+                <!--<a (click)='authService.logout()' *ngIf="authService.isAuthenticated()" routerLink="my-lykke">LOGOUT</a>-->
+              <!--</li>-->
+            </ul>
+          </div>
+          <div class="col-xs-3" *ngIf="authService.isAuthenticated()">
+              <app-currency></app-currency>
+          </div>
+        </div>
+      </div>
+    </nav>
+</header>
+<!--<nav class="navbar navbar-default navbar-static-top">-->
+  <!--<div class="container-fluid">-->
+    <!--<div class="navbar-header">-->
+      <!--<button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-8" aria-expanded="false">-->
+        <!--<span class="sr-only">Toggle navigation</span>-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+      <!--</button>-->
+      <!--<a href="#" class="navbar-brand">Brand</a>-->
+    <!--</div>-->
+
+    <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-8">-->
+      <!--<ul class="nav navbar-nav">-->
+        <!--<li routerLinkActive="active">-->
+          <!--<a routerLink="secure/wallets">Wallets</a>-->
+        <!--</li>-->
+        <!--<li>-->
+          <!--<a routerLink="secure/exchange">Exchange</a>-->
+        <!--</li>-->
+        <!--<li>-->
+          <!--<a routerLink="secure/history">History</a>-->
+        <!--</li>-->
+        <!--<li>-->
+          <!--<a routerLink="secure/my-lykke">My lykke</a>-->
+        <!--</li>-->
+      <!--</ul>-->
+      <!--<div class="pull-right mt-20">-->
+        <!--<app-currency></app-currency>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</nav>-->

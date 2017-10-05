@@ -1,0 +1,11 @@
+<div class="aside-wrapper" [ngClass]="showDirection" #asideWrapper>
+  <div class="breadcrumb-wrapper" *ngIf="!hideBreadcrumb">
+    <ol class="breadcrumb">
+      <li *ngFor="let breadCrumbItem of breadCrumbList; let i = index" [ngClass]="{'active': i == breadCrumbItem.length-1}">
+        <a [routerLink]="[breadCrumbItem.url]" (click)="toggleCurtain()">{{breadCrumbItem.name}}</a>
+      </li>
+    </ol>
+  </div>
+  <div #container></div>
+</div>
+<div class="curtain" #curtain (click)="destroyCustomComponent()"></div>

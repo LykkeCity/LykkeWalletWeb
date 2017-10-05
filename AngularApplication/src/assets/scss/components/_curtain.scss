@@ -1,0 +1,34 @@
+.curtain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(207, 210, 215, 0.5);
+  z-index: 50;
+  display: none;
+  opacity: 0;
+  transition: 0s;
+  &.show {
+    display: block;
+    opacity: 1;
+  }
+}
+body.blur {
+  overflow: hidden;
+  .main-header,
+  .main-footer,
+  .container:not(app-aside) {
+    filter: blur(5px);
+  }
+}
+body.blur-popup {
+  overflow: hidden;
+  .main-header,
+  .container,
+  .small-container,
+  .main-footer,
+  app-root >:not(app-popup) {
+    filter: blur(5px);
+  }
+}

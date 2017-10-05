@@ -1,0 +1,721 @@
+//@font-face {
+//  font-family: 'icon';
+//  src: url("assets/fonts/icon.eot?3y33cx");
+//  src: url("assets/fonts/icon.eot?3y33cx#iefix") format("embedded-opentype"),
+//  url("assets/fonts/icon.ttf?3y33cx") format("truetype"),
+//  url("assets/fonts/icon.woff?3y33cx") format("woff"),
+//  url("assets/fonts/icon.svg?3y33cx#icon") format("svg");
+//  font-weight: normal;
+//  font-style: normal;
+//}
+//
+//[class^="icon--"], [class*=" icon--"] {
+//  /* use !important to prevent issues with browser extensions that change fonts */
+//  font-family: 'icon' !important;
+//  speak: none;
+//  font-style: normal;
+//  font-weight: normal;
+//  font-variant: normal;
+//  text-transform: none;
+//  line-height: 1;
+//  display: inline-block;
+//  position: relative;
+//  top: -1px;
+//  margin-right: 6px;
+//  vertical-align: middle;
+//  /* Better Font Rendering =========== */ -webkit-font-smoothing: antialiased;
+//  -moz-osx-font-smoothing: grayscale;
+//  font-size: 20px;
+//  font-size: 1.25rem;
+//  margin-right: 6px;
+//  margin-right: 0.375rem;
+//}
+//
+//.icon--drag:before {
+//  content: "\e959";
+//}
+//
+//.icon--prize .path1:before {
+//  content: "\e900";
+//  color: #ffae2c;
+//}
+//
+//.icon--prize .path2:before {
+//  content: "\e901";
+//  margin-left: -1em;
+//  color: white;
+//}
+//
+//.icon--prize .path3:before {
+//  content: "\e902";
+//  margin-left: -1em;
+//  color: white;
+//}
+//
+//.icon--prize2:before {
+//  content: "\e903";
+//}
+//
+//.icon--back:before {
+//  content: "\e904";
+//}
+//
+//.icon--deadline:before {
+//  content: "\e906";
+//}
+//
+//.icon--doc_file .path1:before {
+//  content: "\e907";
+//  color: #0da7fc;
+//}
+//
+//.icon--doc_file .path2:before {
+//  content: "\e908";
+//  margin-left: -1em;
+//  color: white;
+//}
+//
+//.icon--edit:before {
+//  content: "\e909";
+//}
+//
+//.icon--finance:before {
+//  content: "\e936";
+//}
+//
+//.icon--follow:before {
+//  content: "\e911";
+//}
+//
+//.icon--jpg_file .path1:before {
+//  content: "\e912";
+//  color: #ffae2c;
+//}
+//
+//.icon--jpg_file .path2:before {
+//  content: "\e913";
+//  margin-left: -1em;
+//  color: white;
+//}
+//
+//.icon--linkedin-icn:before {
+//  content: "\e914";
+//}
+//
+//.icon--more:before {
+//  content: "\e915";
+//}
+//
+//.icon--participate:before {
+//  content: "\e916";
+//}
+//
+//.icon--pdf_file .path1:before {
+//  content: "\e917";
+//  color: #ff3e2e;
+//}
+//
+//.icon--pdf_file .path2:before {
+//  content: "\e918";
+//  margin-left: -1em;
+//  color: white;
+//}
+//
+//.icon--result .path1:before {
+//  content: "\e919";
+//  color: #ab00ff;
+//}
+//
+//.icon--result .path2:before {
+//  content: "\e91a";
+//  margin-left: -1em;
+//  color: white;
+//}
+//
+//.icon--sent:before {
+//  content: "\e91b";
+//}
+//
+//.icon--share_result:before {
+//  content: "\e91c";
+//}
+//
+//.icon--vote_no:before {
+//  content: "\e91d";
+//}
+//
+//.icon--vote_yes:before {
+//  content: "\e91e";
+//}
+//
+//.icon--vote_list:before {
+//  content: "\e946";
+//}
+//
+//.icon--xls_file .path1:before {
+//  content: "\e920";
+//  color: #13b72a;
+//}
+//
+//.icon--xls_file .path2:before {
+//  content: "\e921";
+//  margin-left: -1em;
+//  color: white;
+//}
+//
+//.icon--pin:before {
+//  content: "\e923";
+//}
+//
+//.icon--youtube:before {
+//  content: "\e924";
+//}
+//
+//.icon--search:before {
+//  content: "\e925";
+//}
+//
+//.icon--tw:before {
+//  content: "\e926";
+//}
+//
+//.icon--fb:before {
+//  content: "\e927";
+//}
+//
+//.icon--mail:before {
+//  content: "\e937";
+//}
+//
+//.icon--comment:before {
+//  content: "\e922";
+//}
+//
+//.icon--arrow-down:before {
+//  content: "\e90f";
+//}
+//
+//.icon--clock:before {
+//  content: "\e92c";
+//}
+//
+//.icon--wallet:before {
+//  content: "\e938";
+//}
+//
+//.icon--chevron-thin-up:before {
+//  content: "\e928";
+//}
+//
+//.icon--chevron-thin-right:before {
+//  content: "\e929";
+//}
+//
+//.icon--chevron-thin-left:before {
+//  content: "\e92a";
+//}
+//
+//.icon--chevron-thin-down:before {
+//  content: "\e92b";
+//}
+//
+//.icon--telegram:before {
+//  content: "\e92d";
+//}
+//
+//.icon--reddit:before {
+//  content: "\e92e";
+//}
+//
+//.icon--arrow-right-alt:before {
+//  content: "\ea3c";
+//}
+//
+//.icon--arrow-left-alt:before {
+//  content: "\ea40";
+//}
+//
+//.icon--envelope:before {
+//  content: "\e932";
+//}
+//
+//.icon--link:before {
+//  content: "\e933";
+//}
+//
+//.icon--follow_fill:before {
+//  content: "\e934";
+//}
+//
+//.icon--follow_icn:before {
+//  content: "\e935";
+//}
+//
+//.icon--deadline_fill:before {
+//  content: "\e910";
+//}
+//
+//.icon--check:before {
+//  content: "\e931";
+//}
+//
+//.icon--github:before {
+//  content: "\e90e";
+//}
+//
+//.icon--instagram:before {
+//  content: "\e905";
+//}
+//
+//.icon--fb_simple:before {
+//  content: "\e930";
+//}
+//
+//.icon--info:before {
+//  content: "\e92f";
+//}
+//
+//.icon--indeterminate_check_box:before {
+//  content: "\e90c";
+//}
+//
+//.icon--check_circle:before {
+//  content: "\e90d";
+//}
+//
+//.icon--check_box_outline_blank:before {
+//  content: "\e919";
+//}
+//
+//.icon--check_box:before {
+//  content: "\e91a";
+//}
+//
+//.icon--check_thin:before {
+//  content: "\e90b";
+//}
+//
+//.icon--edit_alt:before {
+//  content: "\e939";
+//}
+//
+//.icon--trash:before {
+//  content: "\e93c";
+//}
+//
+//.icon--cal:before {
+//  content: "\e948";
+//}
+//
+//.icon--cancel:before {
+//  content: "\e93b";
+//}
+//
+//.icon--in_process:before {
+//  content: "\e93d";
+//}
+//
+//.icon--in_process_simple:before {
+//  content: "\e947";
+//}
+//
+//.icon--fail .path1:before {
+//  content: "\e93e";
+//  color: white;
+//}
+//
+//.icon--fail .path2:before {
+//  content: "\e93f";
+//  margin-left: -1em;
+//  color: #ffae2c;
+//}
+//
+//.icon--fail .path3:before {
+//  content: "\e940";
+//  margin-left: -1em;
+//  color: #ffae2c;
+//}
+//
+//.icon--lykke:before {
+//  content: "\e941";
+//  font-size: 110%;
+//}
+//
+//.icon--close:before {
+//  content: "\e942";
+//}
+//
+//.icon--cancel_round:before {
+//  content: "\e943";
+//}
+//
+//.icon--prev_transaction:before {
+//  content: "\e90a";
+//}
+//
+//.icon--next_transaction {
+//  -webkit-transform: rotate(180deg);
+//  -moz-transform: rotate(180deg);
+//  -ms-transform: rotate(180deg);
+//  -o-transform: rotate(180deg);
+//  transform: rotate(180deg);
+//}
+//
+//.icon--next_transaction:before {
+//  content: "\e90a";
+//}
+//
+//.icon--arrow_right_big:before {
+//  content: "\e93a";
+//}
+//
+//.icon--arrow_left_big:before {
+//  content: "\e93a";
+//  display: block;
+//  -webkit-transform: rotate(180deg);
+//  -moz-transform: rotate(180deg);
+//  -ms-transform: rotate(180deg);
+//  -o-transform: rotate(180deg);
+//  transform: rotate(180deg);
+//}
+//
+//.icon--vote_list:before {
+//  content: "\e946";
+//}
+//
+//.icon--copy:before {
+//  content: "\e91f";
+//}
+//
+//.icon--polygon:before {
+//  content: "\e944";
+//}
+//
+//.icon--polygon_fill:before {
+//  content: "\e945";
+//}
+//
+//.icon--download:before {
+//  content: "\e949";
+//}
+//
+//.icon--help_outline:before {
+//  content: "\e94a";
+//}
+//
+//.icon--rename_icn:before {
+//  content: "\e94b";
+//}
+//
+//.icon--star_stroke:before {
+//  content: "\e94c";
+//}
+//
+//.icon--star:before {
+//  content: "\e94d";
+//}
+//
+//.icon--view_icn:before {
+//  content: "\e94e";
+//}
+//
+//.icon--arrow_right_circle:before {
+//  content: "\e94f";
+//}
+//
+//.icon--notificaton:before {
+//  content: "\e953";
+//}
+//
+//.icon--help_outline:before {
+//  content: "\e951";
+//}
+//
+//.icon--save_as_draft:before {
+//  content: "\e952";
+//}
+//
+//.icon--add_circle:before {
+//  content: "\e954";
+//}
+//
+//.icon--add:before {
+//  content: "\e950";
+//}
+//
+//.icon--qr:before {
+//  content: "\e94a";
+//}
+//
+//.icon--vk:before {
+//  content: "\e955";
+//}
+//
+//.icon--move_to:before {
+//  content: "\e956";
+//}
+//
+//.icon--exit:before {
+//  content: "\e957";
+//}
+//
+//.icon--settings:before {
+//  content: "\e958";
+//}
+//
+//.icon--finance_alt:before {
+//  content: "\e95d";
+//}
+//
+//.icon--email:before {
+//  content: "\e962";
+//}
+//
+//.icon--lock:before {
+//  content: "\e963";
+//}
+//
+//.icon--actions:before {
+//  content: "\e95a";
+//}
+//
+//.icon--qr_alt:before {
+//  content: "\e95b";
+//}
+//
+//.icon--slack:before {
+//  content: "\e95c";
+//}
+//
+//.panel_heading a:after {
+//  font-family: 'icon' !important;
+//  color: #B2B8BF;
+//  content: "\e942";
+//  position: absolute;
+//  right: 0;
+//  top: 50%;
+//  margin-top: -13px;
+//  -webkit-transform: rotate(45deg);
+//  -moz-transform: rotate(45deg);
+//  -ms-transform: rotate(45deg);
+//  -o-transform: rotate(45deg);
+//  transform: rotate(45deg);
+//  font-size: 26px;
+//  font-size: 1.625rem;
+//  -webkit-transition: -webkit-transform 0.3s ease;
+//  -moz-transition: -moz-transform 0.3s ease;
+//  -o-transition: -o-transform 0.3s ease;
+//  transition: transform 0.3s ease
+//}
+//
+//.panel_heading--active a:after {
+//  -webkit-transform: rotate(0);
+//  -moz-transform: rotate(0);
+//  -ms-transform: rotate(0);
+//  -o-transform: rotate(0);
+//  transform: rotate(0)
+//}
+
+
+@font-face {
+  font-family: 'lwicons';
+  src:  url('assets/fonts/lwicons.eot?m1es82');
+  src:  url('assets/fonts/lwicons.eot?m1es82#iefix') format('embedded-opentype'),
+  url('assets/fonts/lwicons.ttf?m1es82') format('truetype'),
+  url('assets/fonts/lwicons.woff?m1es82') format('woff'),
+  url('assets/fonts/lwicons.svg?m1es82#lwicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon--"], [class*=" icon--"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'lwicons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    display: inline-block;
+    position: relative;
+    top: -1px;
+    margin-right: 6px;
+    vertical-align: middle;
+    /* Better Font Rendering =========== */ -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 20px;
+    font-size: 1.25rem;
+    margin-right: 6px;
+    margin-right: 0.375rem;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon--trading_buy:before {
+  content: "\e945";
+}
+.icon--calendar:before {
+  content: "\e948";
+}
+.icon--lykke:before {
+  content: "\e941";
+  color: #3f4d60;
+}
+.icon--github:before {
+  content: "\e936";
+  color: #3f4d60;
+}
+.icon--instagram:before {
+  content: "\e939";
+  color: #3f4d60;
+}
+.icon--linkedin:before {
+  content: "\e914";
+  color: #3f4d60;
+}
+.icon--arrow_down:before {
+  content: "\e93d";
+  color: #3f4d60;
+}
+.icon--youtube:before {
+  content: "\e93a";
+}
+.icon--tw:before {
+  content: "\e93b";
+}
+.icon--fb:before {
+  content: "\e93c";
+}
+.icon--withdraw_swift:before {
+  content: "\e900";
+}
+.icon--withdraw_bl_transfer:before {
+  content: "\e903";
+}
+.icon--watchlist:before {
+  content: "\e906";
+  color: #b2b8bf;
+}
+.icon--trading_sell:before {
+  content: "\e907";
+}
+.icon--telegram:before {
+  content: "\e90f";
+  color: #3f4d60;
+}
+.icon--slack:before {
+  content: "\e910";
+  color: #3f4d60;
+}
+.icon--settle_coins:before {
+  content: "\e911";
+}
+.icon--search:before {
+  content: "\e916";
+  color: #8c94a0;
+}
+.icon--save_template:before {
+  content: "\e917";
+  color: #b2b8bf;
+}
+.icon--reverse:before {
+  content: "\e918";
+}
+.icon--rename:before {
+  content: "\e919";
+  color: #b2b8bf;
+}
+.icon--reddit:before {
+  content: "\e91a";
+  color: #3f4d60;
+}
+.icon--qr:before {
+  content: "\e91b";
+  color: #b2b8bf;
+}
+.icon--notificaton:before {
+  content: "\e91c";
+  color: #8c94a0;
+}
+.icon--menu:before {
+  content: "\e91d";
+  color: #8c94a0;
+}
+.icon--finance:before {
+  content: "\e91e";
+  color: #8c94a0;
+}
+.icon--fav:before {
+  content: "\e91f";
+  color: #b2b8bf;
+}
+.icon--fav_fill:before {
+  content: "\e920";
+}
+.icon--details:before {
+  content: "\e921";
+  color: #b2b8bf;
+}
+.icon--deposit_swift:before {
+  content: "\e922";
+}
+.icon--deposit_credit_card:before {
+  content: "\e925";
+}
+.icon--deposit_bl_transfer:before {
+  content: "\e929";
+}
+.icon--defrost:before {
+  content: "\e92c";
+  color: #b2b8bf;
+}
+.icon--create:before {
+  content: "\e92d";
+  color: #b2b8bf;
+}
+.icon--back:before {
+  content: "\e92e";
+  color: #3f4d60;
+}
+.icon--arrow_right:before {
+  content: "\e92f";
+  color: #b2b8bf;
+}
+.icon--add:before {
+  content: "\e930";
+}
+.icon--actions:before {
+  content: "\e931";
+  color: #b2b8bf;
+}
+.icon--copy_thin:before {
+  content: "\e95e";
+}
+.icon--close:before {
+  content: "\e942";
+}
+.icon--mail:before {
+  content: "\e937";
+}
+.icon--done:before {
+  content: "\e964";
+}
+.icon--wallet:before {
+  content: "\e938";
+}
+.icon--chevron-thin-up:before {
+  content: "\e932";
+}
+.icon--chevron-thin-right:before {
+  content: "\e933";
+}
+.icon--chevron-thin-left:before {
+  content: "\e934";
+}
+.icon--chevron-thin-down:before {
+  content: "\e935";
+}
+

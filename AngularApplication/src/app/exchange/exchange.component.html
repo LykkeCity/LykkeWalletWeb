@@ -1,0 +1,54 @@
+<div class="exchange-placeholder">
+
+  <app-currency-pair [currencyPairList]="pairs" [assetRates]="assetRates" [currencyPair]="firstPair"></app-currency-pair>
+  <div class="spinner" *ngIf="!firstPair || !type || !assetId || !orders">
+    <div class="spinner__inside"></div>
+  </div>
+  <div class="container pt-30">
+    <div class="row">
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1 class="heading-lg">{{firstPair}}</h1>
+          </div>
+          <div class="col-xs-12">
+            <h2 class="heading-md">
+              1219.16
+              <span class="text-md blue-light">15.18(1.26%)</span>
+              <span class="text-md blue-light">Bid: {{assetRates.Bid}}</span>
+              <span class="text-md blue-light">Ask: {{assetRates.Ask}}</span>
+            </h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <app-tradingview></app-tradingview>
+          </div>
+        </div>
+        <div class="row pt-40">
+          <div class="col-xs-12">
+            <h1 class="heading-lg">Trade BTC</h1>
+          </div>
+        </div>
+        <!--<div class="row no-gutters pt-30 pb-30 border-bottom-gray-light">-->
+          <!--<div class="col-xs-3">-->
+            <!--<span class="text-md blue-light">Templates (2)</span>-->
+          <!--</div>-->
+          <!--<div class="col-xs-3">-->
+            <!--<span class="text-md blue-light">Recent deposits</span>-->
+          <!--</div>-->
+          <!--<div class="col-xs-3 col-xs-offset-3 text-right">-->
+            <!--<span class="text-md blue-light">Add to favorites</span>-->
+          <!--</div>-->
+        <!--</div>-->
+        <app-buy-sell-form *ngIf="firstPair && type && assetId" [assetPair]="firstPair" [type]="type" [urlAsset]="assetId" [assetRates]="assetRates"></app-buy-sell-form>
+      </div>
+      <div class="col-xs-4 gray-dark">
+        <app-order-book *ngIf="orders && assetRates" [orderBookData]="orders" [pairRates]="assetRates"></app-order-book>
+        <h2 class="heading-sm border-bottom-gray-light pt-60 pb-15 mb-30">Asset Description</h2>
+        <app-asset-info *ngIf="splitPairsArr.length > 0" [assetId]="splitPairsArr[0]"></app-asset-info>
+        <app-asset-info *ngIf="splitPairsArr.length > 0" [assetId]="splitPairsArr[1]"></app-asset-info>
+      </div>
+    </div>
+  </div>
+</div>

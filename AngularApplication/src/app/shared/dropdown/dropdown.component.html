@@ -1,0 +1,117 @@
+<div class="btn-group" *ngIf="dropdownData" [ngClass]="{'open': isOpen}" (clickOutside)="closeDropdown()">
+  <button [ngClass]="buttonOptions.classNames" (click)="toggleDropdown()">
+    <i class="icon {{buttonOptions.iconClass}}" *ngIf="buttonOptions.hasIcon"></i>
+    <span *ngIf="buttonOptions.buttonText">{{buttonOptions.buttonText}}</span>
+  </button>
+
+  <ul class="dropdown-menu actions-list" *ngIf="isOpen && !dropdownOptions.hasGroups">
+    <li class="list-item" *ngFor="let item of dropdownData">
+      <a [routerLink]="item.url">
+        <i class="icon {{item.icon}}" *ngIf="item.icon"></i>
+        {{item.name}}
+      </a>
+    </li>
+    <ng-template [ngIf]="dropdownOptions.hasFooterLinks">
+      <hr/>
+      <li class="list-item" *ngFor="let item of footerLinksData">
+        <a [routerLink]="item.url">
+          <i class="icon {{item.icon}}" *ngIf="item.icon"></i>
+          {{item.name}}
+        </a>
+      </li>
+    </ng-template>
+  </ul>
+
+  <div class="wallet-dropdown-items-container" *ngIf="isOpen && dropdownOptions.hasGroups">
+    <ul class="actions-list">
+      <li class="list-item">
+        <a [routerLink]="[walletName, dropdownData.Id]" class="wallet-dropdown-link">
+          <i class="icon icon--trading_sell"></i>
+          Asset Details
+        </a>
+      </li>
+    </ul>
+    <h3 class="action-list-title" *ngIf="(dropdownData.SwiftDeposit || dropdownData.BlockchainDeposit || dropdownData.VisaDeposit)">DEPOSITE</h3>
+    <ul class="actions-list" *ngIf="(dropdownData.SwiftDeposit || dropdownData.BlockchainDeposit || dropdownData.VisaDeposit)">
+      <li class="list-item" *ngIf="dropdownData.SwiftDeposit">
+        <a [routerLink]="['/wallets/trading/deposit/swift', dropdownData.Id]" class="wallet-dropdown-link">
+          <i class="icon icon--deposit_swift"></i>
+          SWIFT
+        </a>
+      </li>
+      <li class="list-item" *ngIf="dropdownData.BlockchainDeposit">
+        <a [routerLink]="['deposit' , 'blockchain', walletName, dropdownData.Id]" class="wallet-dropdown-link">
+          <i class="icon icon--deposit_bl_transfer"></i>
+          Blockchain Transfer
+        </a>
+      </li>
+      <li class="list-item" *ngIf="dropdownData.VisaDeposit">
+        <a [routerLink]="['/wallets/trading/deposit/credit-card', dropdownData.Id]" class="wallet-dropdown-link">
+          <i class="icon icon--deposit_credit_card"></i>
+          Credit Card
+        </a>
+      </li>
+    </ul>
+    <h3 class="action-list-title" *ngIf="!dropdownData.HideWithdraw && (dropdownData.BlockchainWithdrawal || dropdownData.SwiftWithdrawal)">WITHDRAW</h3>
+    <ul class="actions-list" *ngIf="!dropdownData.HideWithdraw && (dropdownData.BlockchainWithdrawal || dropdownData.SwiftWithdrawal)">
+      <li class="list-item" *ngIf="dropdownData.BlockchainWithdrawal">
+        <a [routerLink]="['/wallets/trading/withdraw/swift', dropdownData.Id]" class="wallet-dropdown-link">
+          <i class="icon icon--deposit_swift"></i>
+          SWIFT
+        </a>
+      </li>
+      <li class="list-item" *ngIf="dropdownData.SwiftWithdrawal">
+        <a [routerLink]="['withdraw', 'blockchain', walletName, dropdownData.Id]" class="wallet-dropdown-link">
+          <i class="icon icon--deposit_bl_transfer"></i>
+          Blockchain Transfer
+        </a>
+      </li>
+    </ul>
+    <h3 class="action-list-title" *ngIf="dropdownData.SellScreen">TRADING</h3>
+    <ul class="actions-list" *ngIf="dropdownData.SellScreen">
+      <li class="list-item">
+        <a [routerLink]="['']" class="wallet-dropdown-link">
+          <i class="icon icon--trading_sell"></i>
+          <!--// TODO ADD SELL URL-->
+          Sell
+        </a>
+      </li>
+      <li class="list-item">
+        <a [routerLink]="['']" class="wallet-dropdown-link">
+          <i class="icon icon--trading_buy"></i>
+          Buy
+          <!--// TODO ADD BUY URL-->
+        </a>
+      </li>
+    </ul>
+    <h3 class="action-list-title" *ngIf="dropdownData.Id == 'LKK' || dropdownData.Id == 'LKK1Y'">FORWARD SETTLEMENT</h3>
+    <ul class="actions-list" *ngIf="dropdownData.Id == 'LKK' || dropdownData.Id == 'LKK1Y'">
+      <li class="list-item">
+        <a [routerLink]="['/wallets/trading/settle', dropdownData.Id]" class="wallet-dropdown-link">
+          <i class="icon icon--settle_coins"></i>
+          Settle LKK
+        </a>
+      </li>
+      <li class="list-item">
+        <a [routerLink]="['']" class="wallet-dropdown-link">
+          <i class="icon icon--trading_buy"></i>
+          Buy Lykke Shares
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!--<div class="wallet-dropdown-items-container" *ngIf="isOpen && dropdownOptions.hasGroups">-->
+    <!--<div *ngFor="let groupItem of dropdownData">-->
+      <!--<h3 class="action-list-title" *ngIf="groupItem.groupName">{{groupItem.groupName}}</h3>-->
+      <!--<ul class="actions-list">-->
+        <!--<li class="list-item" *ngFor="let item of groupItem.items">-->
+          <!--<a [routerLink]="item.url" class="wallet-dropdown-link">-->
+            <!--<i class="icon {{item.icon}}" *ngIf="item.icon"></i>-->
+            <!--{{item.name}}-->
+          <!--</a>-->
+        <!--</li>-->
+      <!--</ul>-->
+    <!--</div>-->
+  <!--</div>-->
+</div>

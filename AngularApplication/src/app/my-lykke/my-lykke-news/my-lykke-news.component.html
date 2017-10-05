@@ -1,0 +1,48 @@
+<div class="my-lykke-news-placeholder">
+  <div class="small-container mt-83">
+    <div class="row mb-50">
+      <div class="col-xs-12">
+        <h1 class="heading-lg gray-dark text-center">News</h1>
+      </div>
+    </div>
+    <div class="spinner" *ngIf="news.length === 0">
+      <div class="spinner__inside"></div>
+    </div>
+  </div>
+
+  <div *ngIf="news" class="overflow-hidden">
+    <div class="row news-wrapper" *ngFor="let new of news">
+      <div class="container">
+        <div class="col-xs-12">
+          <div class="img-wrapper">
+            <img [src]="new.ImgUrl" class="news-img">
+          </div>
+          <h1 class="heading-md gray-dark pb-10">{{new.Title}}</h1>
+          <p class="text-md pb-20" *ngIf="new.Text">{{new.Text}}</p>
+          <p class="text-md pb-20" *ngIf="!new.Text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cupiditate dolore doloremque dolores ducimus eos iste laborum, natus nesciunt nobis officiis quasi quia quisquam saepe sed sunt totam veniam, voluptas!</p>
+          <div class="row">
+            <div class="col-xs-8 pt-10 pb-10">
+              <span class="text-s">{{new.Author}}</span>
+              <span class="text-s">{{new.DateTime}}</span>
+            </div>
+              <div class="col-xs-4 text-right">
+                <a [href]="new.Url" target="_blank" class="text-s button button-blue">Read More</a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 text-center mt-50" *ngIf="hideShowMore">
+        <div><img src="/assets/img/assets/lykke-small.png" alt=""></div>
+        <p class="text-md gray-light">No More News</p>
+      </div>
+      <div class="spinner mt-50" *ngIf="loadNews">
+        <div class="spinner__inside"></div>
+      </div>
+      <div class="col-xs-12 text-center mt-50" *ngIf="!hideShowMore && !loadNews">
+        <button type="button" class="button button-blue" (click)="loadMore()">Load More News</button>
+      </div>
+    </div>
+  </div>
+</div>

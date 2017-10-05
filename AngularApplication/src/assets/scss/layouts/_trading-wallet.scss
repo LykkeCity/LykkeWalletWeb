@@ -1,0 +1,40 @@
+.gray-bg {
+  background-color: #f5f6f7;
+}
+.wallet-tabs {
+  @extend .main-navigation;
+  > li {
+    > a {
+      font-family: "Proxima Nova";
+      color: #3f4d60;
+      opacity: 0.6;
+      letter-spacing: 0;
+      text-transform: capitalize;
+      font-size: 18px;
+      &.active {
+        font-family: "Proxima Nova Semibold";
+        color: black;
+      }
+    }
+  }
+}
+
+.wallet-navigation {
+  .container {
+    width: 1170px;
+    line-height: 90px;
+    @media screen and (max-width: 1199px) {
+      width: 95%;
+    }
+  }
+}
+
+.gray-color {
+  color: #3f4d60;
+  opacity: 0.6;
+
+  &:hover,
+  &.active {
+    color: red;
+  }
+}

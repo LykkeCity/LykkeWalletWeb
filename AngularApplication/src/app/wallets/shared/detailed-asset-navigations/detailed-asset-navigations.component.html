@@ -1,0 +1,72 @@
+<div class="row asset-detailed-actions" *ngIf="asset">
+  <div class="col-xs-3">
+    <h3 class="action-list-title" *ngIf="!asset.HideDeposit">
+      Deposit</h3>
+    <ul class="actions-list" *ngIf="!asset.HideDeposit">
+      <li class="list-item" *ngIf="asset.SwiftDepositEnabled">
+        <a [routerLink]="['/wallets/trading/deposit/swift', asset.Id]">
+          <i class="icon icon--deposit_swift"></i>
+          SWIFT
+        </a>
+      </li>
+      <li class="list-item" *ngIf="asset.BlockchainDepositEnabled">
+        <a [routerLink]="['/wallets/trading/deposit/blockchain', asset.Id]">
+          <i class="icon icon--deposit_bl_transfer"></i>
+          Blockchain transfer
+        </a>
+      </li>
+      <li class="list-item" *ngIf="asset.BankCardsDepositEnabled">
+        <a [routerLink]="['/wallets/trading/deposit/credit-card', asset.Id]">
+          <i class="icon icon--deposit_credit_card"></i>
+          Credit Card
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-xs-3">
+    <h3 class="action-list-title" *ngIf="!asset.HideWithdraw">Withdraw</h3>
+    <ul class="actions-list" *ngIf="!asset.HideWithdraw">
+      <li class="list-item" *ngIf="asset.SwiftDepositEnabled">
+        <a [routerLink]="['/wallets/trading/withdraw/swift', asset.Id]">
+          <i class="icon icon--withdraw_swift"></i>
+          SWIFT
+        </a>
+      </li>
+      <li class="list-item" *ngIf="asset.BlockchainDepositEnabled">
+        <a [routerLink]="['/wallets/trading/withdraw/blockchain-transfer', asset.Id]">
+          <i class="icon icon--withdraw_bl_transfer"></i>
+          Blockchain transfer
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-xs-2">
+    <h3 class="action-list-title">TRADING</h3>
+    <ul class="actions-list">
+      <li class="list-item">
+        <a [routerLink]="['']">
+          <i class="icon icon--trading_sell"></i>
+          Sell / Buy
+        </a>
+      </li>
+      <!--SET DROPDOWN HERE-->
+    </ul>
+  </div>
+  <div class="col-xs-4">
+    <h3 class="action-list-title" *ngIf="asset.Id == 'LKK' || asset.Id == 'LKK1Y'">Other actions</h3>
+    <ul class="actions-list" *ngIf="asset.Id == 'LKK' || asset.Id == 'LKK1Y'">
+      <li class="list-item">
+        <a [routerLink]="['/wallets/trading/settle', asset.Id]">
+          <i class="icon icon--settle_coins"></i>
+          1-year LKK Forward Settlements
+        </a>
+      </li>
+      <li class="list-item">
+        <a [routerLink]="['']">
+          <i class="icon icon--trading_buy"></i>
+          Buy Lykke Shares
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

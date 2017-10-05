@@ -1,0 +1,28 @@
+.filter-wrapper {
+  label {
+    font-weight: normal;
+  }
+  .form-control-icon {
+    margin-top: 10px;
+
+  }
+  .row {
+    &.filter-footer {
+      border-bottom: 1px solid #ebedef;
+      padding: 20px 0;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+
+.filter-options-wrapper {
+  .custom-checkox {
+    margin-top: 15px;
+    width: 20%;
+    padding-right: 10px;
+    &:last-child {
+      padding: 0;
+    }
+  }
+}

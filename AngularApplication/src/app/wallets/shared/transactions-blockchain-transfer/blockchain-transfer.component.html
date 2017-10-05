@@ -1,0 +1,50 @@
+<div class="swift-deposite-placeholder">
+  <div class="small-container mt-83">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="heading-lg gray-dark text-center">
+          <span *ngIf="type === 'deposit'">Deposit </span>
+          <span *ngIf="type !== 'deposit'">Withdraw </span>
+          {{assetName}}</h1>
+        <h3 class="heading-md blue-light text-center">Blockchain transfer</h3>
+      </div>
+    </div>
+    <div class="row mt-20">
+      <div class="col-xs-12">
+        <p class="text-md blue-dark">To deposit {{assetName}} to your trading wallet please use the following bank account details.</p>
+      </div>
+    </div>
+    <!--<div class="row pt-30">-->
+      <!--&lt;!&ndash;TODO REMOVE COMMENT WHEN FUNCTINOALITY IS ADDED&ndash;&gt;-->
+      <!--&lt;!&ndash;<div class="col-xs-3">&ndash;&gt;-->
+        <!--&lt;!&ndash;<span class="text-md blue-light">Recent deposits</span>&ndash;&gt;-->
+      <!--&lt;!&ndash;</div>&ndash;&gt;-->
+      <!--&lt;!&ndash;<div class="col-xs-3 col-xs-offset-6 text-right">&ndash;&gt;-->
+        <!--&lt;!&ndash;<span class="text-md blue-light">Add to favorites</span>&ndash;&gt;-->
+      <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--</div>-->
+    <div class="row">
+      <div class="col-xs-12 text-center pt-60 pb-60 border-top-gray-light" *ngIf="type === 'deposit' && walletAddress">
+        <app-qr [data]="walletAddress" size="240"></app-qr>
+      </div>
+      <div class="col-xs-12">
+        <ul class="underline-list" *ngIf="type === 'deposit'">
+          <app-list-item-copy optionName="Your wallet address" optionValue="{{walletAddress}}"></app-list-item-copy>
+        </ul>
+        <form [formGroup]="blockchainForm" *ngIf="type !== 'deposit'">
+          <ul class="underline-list">
+            <li class="relative">
+              <label class="bold form-label">Add your address</label>
+              <input type="text" class="text-md blue-light form-input" formControlName="BcnAddress">
+              <app-error-messages [control]="blockchainForm.controls.BcnAddress"></app-error-messages>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+    <div class="row mt-20">
+      <div class="col-xs-12 text-center"><button class="btn btn-round text-md white" type="button" (click)="onSubmit()">Send to email</button></div>
+      <div class="col-xs-12 text-center pt-25"> <span class="bold blue-medium cursor-pointer" (click)="onLocationBack()">Go back</span></div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<li class="relative">
+  <span class="option-name pr-60">{{optionName}} <small class="copied-to-clipboad-msg text-xs">Copied to clipboard</small></span>
+  <span class="option-value text-md blue-light pr-60">{{optionValue}}</span>
+  <input type="text" value="{{optionValue}}" class="form-input-no-borders text-md blue-light hide-input" readonly>
+  <span class="icon--copy_thin icon-copy-style blue-light" (click)="copyToClipboard($event)"></span>
+</li>

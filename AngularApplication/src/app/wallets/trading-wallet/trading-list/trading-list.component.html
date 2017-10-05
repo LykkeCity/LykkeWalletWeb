@@ -1,0 +1,156 @@
+<div class="trading-wallet-placeholder">
+  <div class="container">
+    <div class="row mt-83 mb-75">
+      <div class="col-lg-7 col-xs-7">
+        <div class="row">
+          <div class="col-lg-12 col-xs-12">
+            <h1 class="bold">Trading Wallet</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8 col-xs-8">
+            <p>
+              An asset is a form of digital token so-called colored coin. Colored coins follow the idea of “coloring” a
+              specific Bitcoin to be broadcasted over the Bitcoin network.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5 col-xs-5">
+        <p class="text-uppercase mt-20">Total Balance</p>
+        <div class="spinner" *ngIf="!clientBalance">
+          <div class="spinner__inside"></div>
+        </div>
+        <h1 *ngIf="userBaseAsset && clientBalance">
+          <span>{{clientBalance | number}}</span>
+          <span>{{userBaseAsset.Name}}</span>
+        </h1>
+        <!--TODO from where to get received and sent money-->
+        <p><span>Received:</span> 50,000.84 LKK</p>
+        <p><span>Sent:</span> 49,000.84 LKK</p>
+        <!--<p><span>P&L:</span> <span class="tform-successcess">+73</span></p>-->
+      </div>
+    </div>
+    <!--GOING TO BE DELIVERED IN NEXT SPRINT-->
+    <!--<div class="row no-gutters wallet-actions">-->
+      <!--<div class="col-xs-12">-->
+        <!--<app-dropdown [buttonOptions]="depositButtonOptions"-->
+                      <!--[dropdownOptions]="depositDropdownOptions"-->
+                      <!--[dropdownData]="depositDropdownData">-->
+        <!--</app-dropdown>-->
+
+        <!--<app-dropdown [buttonOptions]="withdrawButtonOptions"-->
+                      <!--[dropdownOptions]="withDrawDropdownOptions"-->
+                      <!--[dropdownData]="withDrawDropdownData">-->
+        <!--</app-dropdown>-->
+
+        <!--<app-dropdown [buttonOptions]="tradingButtonOptions"-->
+                      <!--[dropdownOptions]="tradingDropdownOptions"-->
+                      <!--[dropdownData]="tradingDropdownData">-->
+        <!--</app-dropdown>-->
+
+        <!--<app-dropdown [buttonOptions]="oterActionsButtonOptions"-->
+                      <!--[dropdownOptions]="oterActionsDropdownOptions"-->
+                      <!--[dropdownData]="oterActionsDropdownData">-->
+        <!--</app-dropdown>-->
+
+        <!--&lt;!&ndash;<app-dropdown [buttonOptions]="FlExampleButtonOptions"&ndash;&gt;-->
+                      <!--&lt;!&ndash;[dropdownOptions]="FlExampleDropdownOptions"&ndash;&gt;-->
+                      <!--&lt;!&ndash;[footerLinksData]="FlExampleFooterLinksData"&ndash;&gt;-->
+                      <!--&lt;!&ndash;[dropdownData]="FlExampleDropdownData">&ndash;&gt;-->
+        <!--&lt;!&ndash;</app-dropdown>&ndash;&gt;-->
+      <!--</div>-->
+    <!--</div>-->
+  </div>
+
+  <div class="spinner" *ngIf="categoriesArr.length === 0">
+    <div class="spinner__inside"></div>
+  </div>
+  <div *ngIf="categoriesArr.length > 0">
+    <div *ngFor="let cat of categoriesArr; let i = index" class="table-collapse">
+      <div class="gray-bg mb-10">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-xs-12">
+              <h2
+                data-toggle="collapse"
+                attr.data-target="#trading-toggle-{{i}}"
+                attr.aria-expanded="{{i === 0 ? true : false}}"
+                attr.aria-controls="trading-toggle-{{i}}"
+                class="currency-section-heading">
+                {{cat.categoryName}}
+                <span class="currency-counter" *ngIf="cat.categoryData">
+                <!--<span class="currency-counter">-->
+                  {{cat.categoryData.length}}
+                  <span *ngIf="cat.categoryData.length > 1 || cat.categoryData.length === 0">assets</span>
+                  <span *ngIf="cat.categoryData.length === 1">asset</span>
+                </span>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+
+        <div class="container table-borders">
+
+          <div class="collapse" [ngClass]="{'in': i === 0 }" id="trading-toggle-{{i}}">
+
+            <div class="row">
+              <div class="col-xs-1"><h3 class="table-heading text-left">Asset</h3></div>
+              <div class="col-xs-2"></div>
+              <div class="col-xs-1"></div>
+              <div class="col-xs-1"><h3 class="table-heading text-center">Issuer</h3></div>
+              <div class="col-xs-3"><h3 class="table-heading text-right">Base currency</h3></div>
+              <div class="col-xs-3"><h3 class="table-heading text-right">Amount</h3></div>
+              <div class="col-xs-1"></div>
+            </div>
+
+            <div class="row" *ngFor="let currency of cat.categoryData">
+              <div class="col-lg-1 col-xs-1 currency-table-data">
+                <span class="lkk-icon-wrapper">
+                  <img src="{{currency.IconUrl}}" alt="">
+                </span>
+              </div>
+              <div class="col-xs-2 currency-table-data">
+                <span class="table-text">
+                  {{currency.Name}}
+                </span>
+              </div>
+
+              <div class="col-xs-1 currency-table-data text-left">
+                <span class="table-text">
+                 <i class="icon icon--qr cursor-pointer" *ngIf="cat.categoryName != 'Lykke'">
+                    <span class="qr-main-wrapper">
+                      <span class="qr-wrapper">
+                        <app-qr class="trading-wallet-qr" [data]="currency.baseAssetData.BcnDepositAddress" size="100"></app-qr>
+                        <span class="qr-text text-s">Scan to get the address</span>
+                      </span>
+                    </span>
+                  </i>
+                </span>
+              </div>
+              <div class="col-xs-1 currency-table-data text-center">
+                <span class="table-text">
+                  {{currency.Issuer}}
+                </span>
+              </div>
+              <div class="col-xs-3 currency-table-data text-right"><span class="table-text ">{{currency.AmountInBase | number:'1.2-2'}} {{userBaseAsset.Name}}</span></div>
+              <div class="col-xs-3 currency-table-data text-right"><span class="table-text">{{currency.Balance}}</span></div>
+              <div class="col-xs-1 currency-table-data text-center">
+                <app-dropdown [buttonOptions]="assetButtonOptions"
+                              [dropdownOptions]="assetDropdownOptions"
+                              [dropdownData]="currency.baseAssetData"
+                              [walletName]="cat.categoryName">
+                </app-dropdown>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

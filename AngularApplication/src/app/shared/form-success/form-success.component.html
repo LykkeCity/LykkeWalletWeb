@@ -1,0 +1,27 @@
+<div class="success-wrapper" *ngIf="_showMessage && messageConfig">
+  <div class="success-container text-center">
+    <img src="/assets/img/success-icn.svg" alt="success message"/>
+    <h1 class="mt-30 heading-md gray-dark bold">{{messageConfig.messageText}}</h1>
+    <h2 class="heading-lgm mt-20" *ngIf="messageConfig.transactionAmount">{{messageConfig.transactionAmount}}</h2>
+    <div class="buttons-wrapper mt-40 mb-40">
+      <!--// TODO SET BUTON OPTIONS -->
+      <button class="button button-default">
+        <i class="icon icon--details fs-20"></i>
+        View Details
+      </button>
+      <button class="button button-default">
+        <i class="icon icon--save_template fs-20"></i>
+        Repeat operation
+      </button>
+      <button class="button button-default">
+        <i class="icon icon--save_template fs-20"></i>
+        Save to templates
+      </button>
+      <!--<button class="button button-default">-->
+        <!--<i class="icon icon&#45;&#45;create"></i>-->
+        <!--Create Another-->
+      <!--</button>-->
+    </div>
+    <button class="button button-blue" (click)="onLocationBack()">{{messageConfig.backButtonText}}</button>
+  </div>
+</div>

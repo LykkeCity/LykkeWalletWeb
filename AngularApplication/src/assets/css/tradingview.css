@@ -1,0 +1,42 @@
+.apply-common-tooltip.just_active,
+.submenu.apply-common-tooltip,
+.apply-common-tooltip,
+.submenu.apply-common-tooltip,
+.intervals-container.favored-list-container.no-first .apply-common-tooltip:last-of-type,
+.tv-close-panel.top{
+  display: none;
+}
+
+.quick .apply-common-tooltip, span.button.fullscreen.iconed.apply-common-tooltip {
+  border: 0;
+  cursor: pointer;
+}
+.quick .apply-common-tooltip:hover,
+.feature-no-touch .header-chart-panel .favored-list-container span:not(.disabled):not(.selected):hover:before,
+.feature-no-touch .properties-toolbar .submenu:not(.disabled):not(.selected):hover:before {
+  border-width: 0;
+  outline: 0;
+}
+
+.quick .apply-common-tooltip.selected {
+  background: #fff!important;
+  color: #333;
+  border-bottom: 1px solid #333;
+  /*display: inline-block;*/
+  /*height: 30px;*/
+  height: 16px;
+}
+
+.chart-style-widget span.selected svg {
+  fill: #333;
+}
+
+.layout__area--top.header-chart-panel {
+  height: 55px !important;
+}
+
+/*.layout__area--center {*/
+  /*top: 60px !important;*/
+/*}*/
+
+

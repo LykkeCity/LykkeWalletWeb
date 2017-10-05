@@ -1,0 +1,60 @@
+.underline-list-title {
+  font-family: "Proxima Nova Bold";
+  font-size: 22px;
+  color: #333333;
+}
+.underline-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+
+  app-list-item-copy {
+    &:last-child li{
+      border-bottom: 1px solid #ebedef;
+    }
+    li {
+      border-top: 1px solid #ebedef;
+      padding: 12px 0;
+      span {
+        display: block;
+      }
+      .option-name {
+        font-family: "Proxima Nova Bold";
+        font-size: 18px;
+        color: #333333;
+      }
+      .option-value {
+        font-size: 16px;
+        color: #3f4d60;
+
+        &.blue-light {
+          @extend .blue-light;
+        }
+      }
+    }
+  }
+
+  > li {
+    border-top: 1px solid #ebedef;
+    padding: 12px 0;
+    &:last-child {
+      border-bottom: 1px solid #ebedef;
+    }
+    span {
+      display: block;
+    }
+    .option-name {
+      font-family: "Proxima Nova Bold";
+      font-size: 18px;
+      color: #333333;
+    }
+    .option-value {
+      font-size: 16px;
+      color: #3f4d60;
+
+      &.blue-light {
+        @extend .blue-light;
+      }
+    }
+  }
+}

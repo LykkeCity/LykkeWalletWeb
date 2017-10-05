@@ -1,0 +1,68 @@
+<div class="container filter-wrapper">
+  <form [formGroup]="transactionsFilterForm" (ngSubmit)="onSubmitForm()">
+
+    <div class="row">
+      <div class="col-xs-4">
+        <div class="row">
+          <div class="col-xs-6">
+            <label for="datetimepicker-from">Date rage from</label>
+            <div class="form-control-icon">
+              <input type="text" class="form-control-custom" name="filter-date" id="datetimepicker-from" formControlName="fromDate" (click)="onResetPeriod()">
+              <i class="icon icon--calendar"></i>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <label for="datetimepicker-to">to</label>
+            <div class="form-control-icon">
+              <input type="text" class="form-control-custom" name="filter-date" id="datetimepicker-to" formControlName="toDate" (click)="onResetPeriod()">
+              <i class="icon icon--calendar"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-8 filter-options-wrapper">
+        <div class="row">
+          <div class="col-xs-12">
+            <span>... or select time range</span>
+          </div>
+          <div class="col-xs-12">
+            <div class="custom-checkox pull-left">
+              <input type="radio" value="today" name="period" id="today" formControlName="period">
+              <label for="today" (click)="onResetDatePickers()">Today</label>
+            </div>
+
+            <div class="custom-checkox pull-left">
+              <input type="radio" value="meek" name="period" id="week" formControlName="period">
+              <label for="week" (click)="onResetDatePickers()">Week</label>
+            </div>
+
+            <div class="custom-checkox pull-left">
+              <input type="radio" value="month" name="period" id="month" formControlName="period">
+              <label for="month" (click)="onResetDatePickers()">Month</label>
+            </div>
+
+            <div class="custom-checkox pull-left">
+              <input type="radio" value="3months" name="period" id="3months" formControlName="period">
+              <label for="3months" (click)="onResetDatePickers()">3 months</label>
+            </div>
+
+            <div class="custom-checkox pull-left">
+              <input type="radio" value="1year" name="period" id="1year" formControlName="period">
+              <label for="1year" (click)="onResetDatePickers()">1 year</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row no-gutters filter-footer">
+      <div class="col-xs-6">
+        <button type="submit" class="button button-blue">Show transactions</button>
+        <button type="button" class="button" (click)="onResetForm()">Clear and close filter</button>
+      </div>
+      <div class="col-xs-6 text-right">
+        <button type="button" class="button text-uppercase mt-10">csv</button>
+      </div>
+    </div>
+  </form>
+</div>

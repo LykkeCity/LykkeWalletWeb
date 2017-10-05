@@ -1,0 +1,20 @@
+.filter-buttons {
+  margin: 25px 0;
+  button {
+    font-size: 20px;
+    padding: 0 20px;
+    color: #3f4d60;
+    border-radius: 20px;
+    &.active {
+      background: #0da7fc;
+      color: #ffffff;
+    }
+    &:last-child {
+      padding: 0;
+      margin: 0 0 0 20px;
+      .icon {
+        font-size: 20px;
+      }
+    }
+  }
+}

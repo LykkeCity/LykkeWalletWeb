@@ -1,0 +1,40 @@
+.currency-section-heading {
+  margin: 20px 0;
+  font-family: "Proxima Nova Semibold";
+  font-size: 22px;
+  line-height: 40px;
+  color: #333333;
+  position: relative;
+  cursor: pointer;
+  &.no-collapse {
+    cursor: default;
+    &:after {
+      display: none;
+    }
+  }
+  &:after {
+    font-family: 'lwicons';
+    display: block;
+    color: #B2B8BF;
+    content: "\e930";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -18px;
+    transform: rotate(0deg);
+    font-size: 20px;
+    transition: transform 0.3s ease;
+  }
+  &[aria-expanded="true"]:after {
+    transform: rotate(45deg);
+  }
+}
+
+.currency-counter,
+.currency-section-heading button{
+  font-family: "Proxima Nova";
+  font-size: 16px;
+  line-height: 1.88;
+  color: #8c94a0;
+  padding-left: 10px;
+}

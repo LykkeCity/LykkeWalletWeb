@@ -1,0 +1,46 @@
+<div class="component-wrapper">
+  <h2>
+    {{wallet.Name}}
+  </h2>
+  <h3>
+    Default private wallet
+  </h3>
+  <ul class="underline-list">
+    <li>
+      <span class="option-name">Name of wallet</span>
+      <span class="option-value">{{wallet.Name}}</span>
+    </li>
+  </ul>
+
+
+  <div class="tabs-wrapper clearfix">
+    <div class="row tabs-header no-gutters">
+      <div class="col-xs-6">
+        <h4 class="tabs-title">Wallet Address</h4>
+      </div>
+      <div class="col-xs-6">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="pull-right"><a href="#colored" aria-controls="colored" role="tab" data-toggle="tab">Colored</a></li>
+          <li role="presentation" class="active pull-right"><a href="#bitcoin" aria-controls="bitcoin" role="tab" data-toggle="tab">Bitcoin</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 tab-content">
+        <div role="tabpanel" class="tab-pane active text-center pt-60 pb-60" id="bitcoin">
+          <app-qr *ngIf="wallet" [data]="wallet.Address" size="250"></app-qr>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="colored">
+          colored
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ul class="underline-list">
+    <li>
+      <span class="option-name">Bitcoin Wallet Address</span>
+      <span class="option-value">{{wallet.Address}}</span>
+    </li>
+  </ul>
+</div>

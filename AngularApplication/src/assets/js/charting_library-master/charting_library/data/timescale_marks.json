@@ -1,0 +1,17 @@
+[
+  {
+    "id": "tsm1", "time": 1506384000, "color": "red", "label": "A", "tooltip": ""
+  },
+  {
+    "id": "tsm2", "time": 1506038400, "color": "blue", "label": "D", "tooltip": ["Dividends: $0.56", "Date: Fri Sep 22 2017"]
+  },
+  {
+    "id": "tsm3", "time": 1505779200, "color": "green", "label": "D", "tooltip": ["Dividends: $3.46", "Date: Tue Sep 19 2017"]
+  },
+  {
+    "id": "tsm4", "time": 1505088000, "color": "#999999", "label": "E", "tooltip": ["Earnings: $3.44", "Estimate: $3.60"]
+  },
+  {
+    "id": "tsm7", "time": 1503792000, "color": "red", "label": "E", "tooltip": ["Earnings: $5.40", "Estimate: $5.00"]
+  }
+]

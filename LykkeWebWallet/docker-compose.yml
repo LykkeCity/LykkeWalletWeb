@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  lykkewebwallet:
+    image: lykkewebwallet
+    build:
+      context: ./LykkeWebWallet
+      dockerfile: Dockerfile

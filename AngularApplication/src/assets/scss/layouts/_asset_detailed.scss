@@ -1,0 +1,60 @@
+
+.asset-detailed-placeholder {
+  position: relative;
+  .button-go-back {
+    position: absolute;
+    top: 10px;
+    left: -80px;
+  }
+  .asset-detailed-actions {
+    padding: 40px 0;
+  }
+  .qr-code-text {
+    font-size: 14px;
+    color: #8c94a0;
+  }
+  .asset-title {
+    font-family: "Proxima Nova Bold";
+    font-size: 40px;
+    color: #333333;
+    margin: 0 0 10px 0;
+    small {
+      font-size: 28px;
+      color: #8c94a0;
+      letter-spacing: -0.3px;
+      font-family: "Proxima Nova Light";
+    }
+  }
+  .asset-amount {
+    font-family: "Proxima Nova Light";
+    font-size: 36px;
+    color: #333333;
+    margin: 0 0 30px 0;
+  }
+  .asset-description {
+    p {
+      font-size: 18px;
+      color: #3f4d60;
+    }
+  }
+  .asset-details {
+    margin: 40px -15px 30px;
+    .asset-details-button {
+      display: inline-block;
+      font-size: 16px;
+      color: #8c94a0;
+      &:first-child {
+        &:before {
+          display: none;
+        }
+      }
+      &:before {
+        content: "⋅";
+        padding: 0 10px;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

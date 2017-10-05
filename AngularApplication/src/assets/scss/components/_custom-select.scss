@@ -1,0 +1,122 @@
+.custom-select {
+  background: #f5f6f7;
+  position: relative;
+  text-align: right;
+  cursor: pointer;
+
+  i:before {
+    font-size: 18px;
+    vertical-align: middle;
+  }
+}
+.custom-select-main-item {
+  font-family: "Proxima Nova";
+  font-size: 16px;
+  line-height: 1.5;
+  color: #8c94a0;
+}
+.custom-select-list {
+  display: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  box-shadow: 0 8px 50px 0 rgba(63, 77, 96, 0.4), 0 5px 5px 0 rgba(63, 77, 96, 0.05);
+  text-align: left;
+  position: absolute;
+  top: 60px;
+  transform: translate(-50%, 0);
+  left: 50%;
+  background: #fff;
+  width: 120px;
+  height: 410px;
+  padding: 5px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 100;
+
+  &.auto-height {
+    height: auto;
+  }
+
+  &.active {
+    display: block;
+  }
+
+  &>.ss-scroll {
+      //right: 50px !important;
+    }
+}
+
+.custom-select-list-item {
+  display: block;
+  padding: 0 15px;
+  margin: 0 5px;
+  font-size: 16px;
+  font-family: "Proxima Nova";
+  color: #3f4d60;
+  line-height: 40px;
+  cursor: pointer;
+
+  &:hover {
+    border-radius: 4px;
+    background-color: #f5f6f7;
+    color: #8c94a0;
+  }
+
+  &.active {
+    border-radius: 4px;
+    background-color: #0da7fc;
+    color: #fff;
+  }
+}
+.user-total-amount-header {
+  &:after {
+    @extend .icon--chevron-thin-down;
+  }
+  font-family: "Proxima Nova";
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: right;
+  color: #3f4d60;
+}
+
+.transfer-dropdown-wrapper {
+  .actions-list .list-item {
+    margin-bottom: 0;
+  }
+  .wallet-dropdown-items-container {
+    width: 400px;
+    padding: 15px 5px;
+    top: 71px;
+    right: 0;
+    left: auto;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+  .list-item {
+    &.selected {
+      border-radius: 4px;
+      background-color: #0da7fc;
+      pointer-events: none;
+      .wallet-dropdown-link {
+        color: #fff;
+        &:hover {
+          background-color: #0da7fc;
+        }
+      }
+    }
+    &.disabled {
+      background-color: #eaedef;
+      color: #babfc6;
+      pointer-events: none;
+
+      .wallet-dropdown-link {
+        color: #babfc6;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+}
+
